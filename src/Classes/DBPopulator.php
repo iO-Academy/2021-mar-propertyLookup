@@ -7,12 +7,10 @@ class DBPopulator {
     public function __construct($listingAPI, $db) {
         $this->listingAPI = $listingAPI;
         $this->dbConnection = $db;
+        $this->emptyDB();
     }
     public function populateDBListingsTable() {
         $this->listings = $this->listingAPI->getListingsFromApi();
-        echo '<pre>';
-        var_dump($this->listings[0]->AGENT_REF);
-        echo '</pre>';
         foreach($this->listings as $listing) {
             $query = $this->dbConnection->prepare('INSERT INTO `listings` (`AGENT_REF`, `ADDRESS_1`, `ADDRESS_2`, `TOWN`, `POSTCODE`, `DESCRIPTION`, `BEDROOMS`, `PRICE`, `IMAGE`, `TYPE`, `STATUS`) VALUES (:agent_ref, :address_1, :address_2, :town, :postcode, :description, :bedrooms, :price, :image, :type, :status);');
             $query->bindParam(':agent_ref', $listing->AGENT_REF);
@@ -46,6 +44,11 @@ class DBPopulator {
             $query->bindParam(':status_name', $listing->STATUS_NAME);
             $query->execute();
         }
+    }
+
+    private function emptyDB() {
+        $query = $this->dbConnection->prepare('TRUNCATE TABLE `types`, `statuses`, `listings`;');
+        $query->execute();
     }
 
     public function populateDBAllTables() {
