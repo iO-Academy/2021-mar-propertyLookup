@@ -13,5 +13,6 @@ class ListingsWindow
         // this will return index.php?type=lettings
         // else get all listings
         // return all
+
     }
 }
