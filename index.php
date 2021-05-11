@@ -16,9 +16,9 @@ require_once 'vendor/autoload.php';
     <div class="header">
         <div class="basicNavbar">
             <div class="basicNavbarButtons">
-                <button class="allBtn navButtons">All</button>
-                <button class="salesBtn navButtons">Sales</button>
-                <button class="lettingsBtn navButtons">Lettings</button>
+                <a href="index.php?type=all"><button class="allBtn navButtons" >All</button></a>
+                <a href="index.php?type=sales"><button class="salesBtn navButtons">Sales</button></a>
+                <a href="index.php?type=lettings"><button class="lettingsBtn navButtons">Lettings</button></a>
             </div>
         </div>
         <div class="jumbotron">
