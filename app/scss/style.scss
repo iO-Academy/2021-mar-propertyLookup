@@ -1,5 +1,14 @@
 @import 'imports/mixins';
 @import 'imports/variables';
+@font-face {
+  font-family:'Merriweather', serif;
+  src: url(/resources/Merriweather-Regular.ttf);
+}
+}
+
+* {
+  box-sizing: border-box
+}
 
 body {
   background: #161B31;
@@ -16,21 +25,27 @@ body {
   height: 50px;
 }
 
-
 .jumbotron {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 300px;
   position: relative;
-  max-width: 400px;
-}
-.jumbotron #builderimg {
-  display: block;
-  height: auto;
-  width: 100%;
-  opacity: 60%;
+  background-image: url("/resources/builderimg.png");
 }
 
-.overlay {}
+
+.overlay {
+  font-family: 'Merriweather', serif;
+  color: #E7ECF8;
+  width: 100%;
+  height: 300px;
+  font-size: 20%;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40%;
+
+}
 
 .boostrapNavbar {
   background: #21264D;
