@@ -1,7 +1,9 @@
 <?php
 namespace ListingsApp\Classes;
 class DBPopulator {
-    public function __construct() {
-        echo 'hello i am a class';
+    private object $listingAPI;
+    private $dbConnection;
+    public function __construct($listingAPI) {
+        $this->listingAPI = $listingAPI;
     }
 }
