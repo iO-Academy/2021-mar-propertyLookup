@@ -26,4 +26,5 @@ exampleTest.php
 -dry
  
  
-##composer dump-autoload
+##set-up
+'composer dump-autoload'
