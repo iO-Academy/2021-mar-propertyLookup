@@ -7,8 +7,8 @@ var_dump($db);
 $trial = new ListingAPI();
 //var_dump($trial->getStatusesFromApi());
 //var_dump($trial->getTypesFromApi());
-//var_dump($trial->getListingsFromApi());
-
+$listings = $trial->getListingsFromApi();
+var_dump($listings);
 
 
 $api = new ListingAPI();

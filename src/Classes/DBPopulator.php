@@ -10,5 +10,6 @@ class DBPopulator {
 
     public function populateDBListingsTable() {
         $query = $this->dbConnection->prepare('INSERT INTO `property-feed` (`AGENT_REF`, `ADDRESS_1`, `ADDRESS_2`, `TOWN`, `POSTCODE`, `DESCRIPTION`, `BEDROOMS`, `PRICE`, `IMAGE`, `TYPE`, `STATUS`) VALUES ;');
+
     }
 }
