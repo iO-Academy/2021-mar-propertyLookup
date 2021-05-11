@@ -8,6 +8,6 @@ $dbPopulator = new DBPopulator($listingAPI, $db);
 
 
 echo '<pre>';
-$dbPopulator->populateDBTypesTable();
+$dbPopulator->populateDBStatusesTable();
 echo '</pre>';
 

@@ -30,17 +30,22 @@ class DBPopulator {
 //        }
 //    }
 
-    public function populateDBTypesTable() {
-        $this->listings = $this->listingAPI->getTypesFromApi();
-        foreach ($this->listings as $listing) {
-            $query = $this->dbConnection->prepare('INSERT INTO `types` (`TYPE_NAME`) VALUES (:type_name);');
-            $query->bindParam(':type_name', $listing->TYPE_NAME);
-            $query->execute();
-        }
-    }
+//    public function populateDBTypesTable() {
+//        $this->listings = $this->listingAPI->getTypesFromApi();
+//        foreach ($this->listings as $listing) {
+//            $query = $this->dbConnection->prepare('INSERT INTO `types` (`TYPE_NAME`) VALUES (:type_name);');
+//            $query->bindParam(':type_name', $listing->TYPE_NAME);
+//            $query->execute();
+//        }
+ //   }
 
     public function populateDBStatusesTable() {
-
+        $this->listings = $this->listingAPI->getStatusesFromApi();
+        foreach ($this->listings as $listing) {
+            $query = $this->dbConnection->prepare('INSERT INTO `statuses` (`STATUS_NAME`) VALUES (:status_name);');
+            $query->bindParam(':status_name', $listing->STATUS_NAME);
+            $query->execute();
+        }
     }
 
     public function populateDBAllTables() {
