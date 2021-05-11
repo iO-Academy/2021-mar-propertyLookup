@@ -11,32 +11,24 @@ class Api {
         $this->request = curl_init();
     }
 
-    private function decodeJson() {
-        json_decode(curl_exec($this->request));
-    }
-
     private function curlRequest($endpoint) {
         curl_setopt($this->request, CURLOPT_URL, "https://dev.io-academy.uk/resources/property-feed/$endpoint.json");
         curl_setopt($this->request, CURLOPT_RETURNTRANSFER, 1);
+        return curl_exec($this->request);
     }
 
     public function getListingsFromApi(): array {
-        $this->curlRequest('properties');
-        $this->allListings = json_decode(curl_exec($this->request));
+        $this->allListings = json_decode($this->curlRequest('properties'));
         return $this->allListings;
     }
 
     public function getTypesFromApi(): array {
-
-        $this->curlRequest('types');
-        $this->lettingTypes = json_decode(curl_exec($this->request));
+        $this->lettingTypes = json_decode($this->curlRequest('types'));
         return $this->lettingTypes;
     }
 
     public function getStatusesFromApi(): array {
-
-        $this->curlRequest('statuses');
-        $this->lettingStatuses= json_decode(curl_exec($this->request));
+        $this->lettingStatuses = json_decode($this->curlRequest('statuses'));
         return $this->lettingStatuses;
     }
 
