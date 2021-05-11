@@ -18,18 +18,15 @@ class Api {
     }
 
     public function getListingsFromApi(): array {
-        $this->allListings = json_decode($this->curlRequest('properties'));
-        return $this->allListings;
+        return $this->allListings = json_decode($this->curlRequest('properties'));
     }
 
     public function getTypesFromApi(): array {
-        $this->lettingTypes = json_decode($this->curlRequest('types'));
-        return $this->lettingTypes;
+        return $this->lettingTypes = json_decode($this->curlRequest('types'));
     }
 
     public function getStatusesFromApi(): array {
-        $this->lettingStatuses = json_decode($this->curlRequest('statuses'));
-        return $this->lettingStatuses;
+        return $this->lettingStatuses = json_decode($this->curlRequest('statuses'));
     }
 
     public function __destruct() {
