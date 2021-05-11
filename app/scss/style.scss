@@ -18,13 +18,17 @@ body {
 
 .basicNavbar {
   background: #21264D;
-  display: flex;
-  justify-content: space-around;
   height: 50px;
 }
 
+.basicNavbarButtons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
 .navButtons {
-  font-size: 10px;
+  font-size: 1.5rem;
   margin: 0px;
   font-family: Verdana;
   color: #E7ECF8;
