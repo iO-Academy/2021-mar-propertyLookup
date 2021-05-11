@@ -10,12 +10,15 @@ namespace ListingsApp\Classes;
 
 class ListingHydrator
 {
+    // Still needs:
+        // getIndividualListing();
+         // getListings();
 
     public static function getForSaleListings(PDO $db)
     {
         $query = $db->prepare('SELECT * FROM `listings` WHERE `type` = 1;');
         $query->execute();
-        $query->setFetchMode(PDO::FETCH_CLASS, Listing::class);
+        $query->setFetchMode(PDO::FETCH_CLASS, Listing::class );
         return $query->fetchAll();
     }
 
@@ -27,6 +30,4 @@ class ListingHydrator
         return $query->fetchAll();
     }
 }
-
-
 
