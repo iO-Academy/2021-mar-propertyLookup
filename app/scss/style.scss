@@ -4,7 +4,6 @@
   font-family:'Merriweather', serif;
   src: url(/resources/Merriweather-Regular.ttf);
 }
-}
 
 * {
   box-sizing: border-box
@@ -31,7 +30,7 @@ body {
   width: 100%;
   height: 300px;
   position: relative;
-  background-image: url("/resources/builderimg.png");
+  background-image: url("../../resources/builderimg.png");
 }
 
 
