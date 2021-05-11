@@ -3,6 +3,13 @@
 
 namespace ListingsApp\Classes;
 
+use PDO;
+
+function getDB(): PDO
+{
+    $db = new PDO('mysql:host=db;dbname=estateAgent', 'root', 'password');
+    return $db;
+}
 /**
  * Class ListingHydrator
  * @package ListingsApp\Classes
@@ -10,11 +17,7 @@ namespace ListingsApp\Classes;
 
 class ListingHydrator
 {
-    // Still needs:
-        // getIndividualListing();
-         // getListings();
-
-    public static function getForSaleListings(PDO $db)
+    public static function getForSaleListings(PDO $db): array
     {
         $query = $db->prepare('SELECT * FROM `listings` WHERE `type` = 1;');
         $query->execute();
@@ -22,7 +25,7 @@ class ListingHydrator
         return $query->fetchAll();
     }
 
-    public static function getForLetListings(PDO $db)
+    public static function getForLetListings(PDO $db): array
     {
         $query = $db->prepare('SELECT * FROM `listings` WHERE `type` = 2;');
         $query->execute();
@@ -30,6 +33,3 @@ class ListingHydrator
         return $query->fetchAll();
     }
 }
-
-
-
