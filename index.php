@@ -1,6 +1,10 @@
 <?php
-use ListingsApp\Classes\Example;
+use ListingsApp\Classes\Api;
 require_once 'vendor/autoload.php';
 
-$a = new Example();
-$a->hello();
+$trial = new Api();
+var_dump($trial->getStatusesFromApi());
+var_dump($trial->getTypesFromApi());
+var_dump($trial->getListingsFromApi());
+
+

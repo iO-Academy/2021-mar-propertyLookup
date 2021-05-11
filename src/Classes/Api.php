@@ -14,7 +14,6 @@ class Api {
      */
     public function __construct() {
         $this->request = curl_init();
-        var_dump($this->request);
     }
 
     /**
