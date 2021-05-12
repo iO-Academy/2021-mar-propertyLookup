@@ -11,7 +11,7 @@
 		<key>connection</key>
 		<dict>
 			<key>database</key>
-			<string>property-feed</string>
+			<string>listings-feed</string>
 			<key>host</key>
 			<string>127.0.0.1</string>
 			<key>kcid</key>
@@ -75,11 +75,11 @@
 			<key>contentSortColIsAsc</key>
 			<true/>
 			<key>contentViewport</key>
-			<string>{{0, 0}, {705, 351}}</string>
+			<string>{{0, 0}, {690, 336}}</string>
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>table</key>
-			<string>properties</string>
+			<string>listings</string>
 			<key>view</key>
 			<string>SP_VIEW_STRUCTURE</string>
 			<key>windowVerticalDividerPosition</key>
