@@ -44,34 +44,20 @@ class ListingWindow
         $result = '';
         foreach($listings as $listing) {
             $result .= "<div class='listingCard card' style='width: 18rem;'>";
-            $result .= '<img class="card-img-top" alt="Image of property" src="https://dev.io-academy.uk/resources/property-feed/images/';
-            $result .= $listing->getImage();
-            $result .= '"/>';
-            $result .= '<div class= "infoDisplay">';
-            $result .= '<h5 class="card-title priceDisplay">';
-            $result .= number_format($listing->getPrice());
-            $result .= '</h5>';
+            $result .= '<img class="card-img-top" alt="Image of property" src="https://dev.io-academy.uk/resources/property-feed/images/' . $listing->getImage() . '"/>';
+            $result .= '<div class= "listingInfo">';
+            $result .= '<h5 class="priceDisplay">' . number_format($listing->getPrice()) . '</h5>';
             $result .= '<ul class="list-group list-group-flush">';
-            $result .= '<li>';
-            $result .= $listing->getAddress2();
-            $result .= ', ' . $listing->getTown();
-            $result .= '</li>';
-            $result .= ' <li>';
-            $result .= $listing->getPostcode();
-            $result .= '</li>';
-            $result .= ' <li>';
-            $result .= $listing->getStatus();
-            $result .= '</li>';
-            $result .= ' <li>';
-            $result .= $listing->getBedrooms();
-            $result .= ' Bedrooms';
-            $result .= '</div>';
+            $result .= '<li>' . $listing->getAddress2() . ', ' . $listing->getTown() . '</li>';
+            $result .= '<li>' . $listing->getPostcode() . '</li>';
+            $result .= '<li>' . $listing->getStatus() . '</li>';
+            $result .= '<li>' . $listing->getBedrooms() . ' Bedrooms';
             $result .= '<div>';
-            $result .= '<button><span>View property</span></button>';
+            $result .= '<button type="button" class="btn btn-primary btn-sm"><span>View property</span></button>';
+            $result .= '</div>';
             $result .= '</div>';
             $result .= '</div>';
         }
         return $result;
     }
 }
-?>
