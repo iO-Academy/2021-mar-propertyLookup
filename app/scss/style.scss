@@ -98,6 +98,14 @@ body {
   align-items: center;
   height: 50px;
 }
+@media screen and (max-width:490px){
+  .bootstrapTable {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 150px;
+  }
+}
+
 .lettingDropdowns {
   visibility: collapse;
 }
