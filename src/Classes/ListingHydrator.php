@@ -38,9 +38,3 @@ class ListingHydrator
         return $query->fetchAll();
     }
 }
-
-$db = getDB();
-$newListing = new ListingHydrator();
-echo '<pre>';
-var_dump($newListing::getForSaleListings($db));
-echo '</pre>';

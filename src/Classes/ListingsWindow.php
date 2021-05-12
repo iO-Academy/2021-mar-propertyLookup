@@ -9,16 +9,27 @@ use PDO;
 
 class ListingsWindow
 {
-    public static function displayListings()
+
+    protected $data;
+
+    public function __construct($data)
     {
-        $type = $_GET["type"];
-        if (isset($type)){
-            if ($type === 'sales') {
-                //return ListingHydrator::getForSaleListings($db);
-            }
-                if ($type === 'lettings') {
-                    //return ListingHydrator::getForLetListings($db);
-                }
-        }
+        $this->data = $data;
     }
+
+    public function displayListings()
+{
+
 }
+
+}
+
+//$type = $_GET["type"];
+//if (isset($type)){
+//    if ($type === 'sales') {
+//        //return displayListing(sales)
+//    }
+//    if ($type === 'lettings') {
+//        //return ListingHydrator::getForLetListings($db);
+//    }
+//}
