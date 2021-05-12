@@ -22,10 +22,16 @@ body {
 }
 
 .basicNavbarButtons {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
   padding: 5px 0;
+  margin: 5px;
   width: 100%;
+  height: 40px;
+  background-color: #21264D;
 }
 
 .navButtons {
@@ -34,7 +40,6 @@ body {
   font-family: Verdana;
   color: #E7ECF8;
   border: 0;
-  padding: 5px 90%;
   background-color: #21264D;
   justify-content: space-around;
 }
