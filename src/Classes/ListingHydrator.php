@@ -1,6 +1,5 @@
 <?php
 namespace ListingsApp\Classes;
-use Listing;
 use PDO;
 
 class ListingHydrator

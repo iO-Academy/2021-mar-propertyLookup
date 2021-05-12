@@ -36,7 +36,6 @@ use ListingsApp\Classes\ListingWindow;
     <div class="pageContent">
         <?php
         $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
-
         $listings = ListingHydrator::getAllListings($db);
         echo '<pre>';
         var_dump($listings);
