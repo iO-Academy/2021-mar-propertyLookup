@@ -100,3 +100,36 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   margin: auto auto;
 }
+
+.listingCard {
+  margin: 10px auto;
+  padding: 10px 0;
+  color: #21264D;
+  background: transparent;
+  border: 3px solid #E7ECF8;
+
+  img {
+    max-height: 160px;
+    max-width: 230px;
+    margin: auto;
+  }
+
+  ul {
+    list-style-type: none;
+    font-size: 1.1rem;
+    color: #E7ECF8;
+  }
+
+  h5 {
+    color: #E7ECF8;
+  }
+
+  button {
+    background: #21264D;
+    border: none;
+  }
+}
+
+.listingInfo {
+  padding-left: 25px;
+}
