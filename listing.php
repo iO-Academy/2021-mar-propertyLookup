@@ -46,7 +46,7 @@ use ListingsApp\Classes\ListingWindow;
         var_dump($listing);
         echo '</pre>';
 
-        echo ListingWindow::displayListing($listing)
+        echo ListingWindow::displayListing($listing);
     ?>
 
 </section>

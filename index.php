@@ -3,7 +3,6 @@ require_once 'vendor/autoload.php';
 use ListingsApp\Classes\Listing;
 use ListingsApp\Classes\ListingHydrator;
 use ListingsApp\Classes\ListingWindow;
-$db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +34,15 @@ $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
         </div>
     </div>
     <div class="pageContent">
+        <?php
+        $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
 
+        $listings = ListingHydrator::getAllListings($db);
+        echo '<pre>';
+        var_dump($listings);
+        echo '</pre>';
+
+        ?>
     </div>
 </body>
 </html>
