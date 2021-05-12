@@ -71,7 +71,7 @@ class DBPopulator {
     }
 
     /**
-     * populates all tables 
+     * populates all tables
      */
     public function populateDBAllTables(): void {
     $this->populateDBListingsTable();
