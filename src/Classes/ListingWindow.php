@@ -47,21 +47,27 @@ class ListingWindow
             $result .= '<img class="card-img-top" alt="Image of property" src="https://dev.io-academy.uk/resources/property-feed/images/';
             $result .= $listing->getImage();
             $result .= '"/>';
-            $result .= '<div class= "infoDisplay card-body">';
-            $result .= '<h5 class="card-title">';
-            $result .= $listing->getAddress2();
+            $result .= '<div class= "infoDisplay">';
+            $result .= '<h5 class="card-title priceDisplay">';
+            $result .= number_format($listing->getPrice());
             $result .= '</h5>';
             $result .= '<ul class="list-group list-group-flush">';
-            $result .= ' <li class="list-group-item">';
-            $result .= $listing->getBedrooms();
-            $result .= ' Bedrooms';
+            $result .= '<li>';
+            $result .= $listing->getAddress2();
+            $result .= ', ' . $listing->getTown();
             $result .= '</li>';
-            $result .= ' <li class="list-group-item">';
+            $result .= ' <li>';
+            $result .= $listing->getPostcode();
+            $result .= '</li>';
+            $result .= ' <li>';
             $result .= $listing->getStatus();
             $result .= '</li>';
-            $result .= '<li class="priceDisplay list-group-item">';
-            $result .= number_format($listing->getPrice());
-            $result .= '</li>';
+            $result .= ' <li>';
+            $result .= $listing->getBedrooms();
+            $result .= ' Bedrooms';
+            $result .= '</div>';
+            $result .= '<div>';
+            $result .= '<button><span>View property</span></button>';
             $result .= '</div>';
             $result .= '</div>';
         }
@@ -69,19 +75,3 @@ class ListingWindow
     }
 }
 ?>
-<!--<div class="card" style="width: 18rem;">-->
-<!--  <img class="card-img-top" src="..." alt="Card image cap">-->
-<!--  <div class="card-body">-->
-<!--    <h5 class="card-title">Card title</h5>-->
-<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--  </div>-->
-<!--  <ul class="list-group list-group-flush">-->
-<!--    <li class="list-group-item">Cras justo odio</li>-->
-<!--    <li class="list-group-item">Dapibus ac facilisis in</li>-->
-<!--    <li class="list-group-item">Vestibulum at eros</li>-->
-<!--  </ul>-->
-<!--  <div class="card-body">-->
-<!--    <a href="#" class="card-link">Card link</a>-->
-<!--    <a href="#" class="card-link">Another link</a>-->
-<!--  </div>-->
-<!--</div>'-->
