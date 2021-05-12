@@ -39,7 +39,7 @@ class ListingWindow
         return  $result;
     }
 
-    static function displayListings($listings): string
+    static function displayListings(array $listings): string
     {
         foreach($listings as $listing) {
             $result = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/';

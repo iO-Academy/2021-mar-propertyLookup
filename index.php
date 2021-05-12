@@ -37,10 +37,10 @@ use ListingsApp\Classes\ListingWindow;
         <?php
         $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
         $listings = ListingHydrator::getAllListings($db);
-        echo $showListings = ListingWindow::displayListings($listings);
-//        echo '<pre>';
-//        var_dump($listings);
-//        echo '</pre>';
+        echo ListingWindow::displayListings($listings);
+        echo '<pre>';
+        var_dump($listings);
+        echo '</pre>';
 
         ?>
     </div>
