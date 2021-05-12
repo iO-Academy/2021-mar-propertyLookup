@@ -17,18 +17,17 @@ function connectDB():PDO
 <body>
 <a href="index.php?type=1">Sales</a>
 <a href="index.php?type=2">Lettings</a>
+<ul>
 <?php
 
 if (isset($_GET['type'])){
     $db = connectDB();
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $data = ListingHydrator::getListingsByType($db, $_GET['type']);
-    var_dump($data);
-    $display = new ListingsWindow();
-    $display::displayListings($data);
+    echo ListingsWindow::displayListings($data);
 }
 ?>
-
+</ul>
 
 </body>
 
