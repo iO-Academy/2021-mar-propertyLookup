@@ -34,10 +34,18 @@ use ListingsApp\Classes\ListingWindow;
 
 <section id="listingDisplay">
     <?php
-        $db= new PDO("mysql:host=db; dbname=listings", "root", "password");
-        $agentRef = $_GET['AGENT_REF'];
-        $hydrator= new ListingHydrator();
-        $listing= $hydrator->getListing($db, $agentRef);
+        $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
+
+        $agentRef = 'CSL123_100259';
+
+        $hydrator = new ListingHydrator();
+
+        $listing = $hydrator->getListing($db, $agentRef);
+
+        echo '<pre>';
+        var_dump($listing);
+        echo '</pre>';
+
         echo ListingWindow::displayListing($listing)
     ?>
 

@@ -8,8 +8,7 @@ class ListingWindow
 {
     static function displayListing($listing): string
     {
-        $result = '';
-        $result .= '<img src ="https://dev.io-academy.uk/resources/property-feed/images/';
+        $result = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/';
         $result .= $listing->getImage();
         $result .= '"/>';
         $result .= '<div class= "infoDisplay">';
@@ -21,7 +20,7 @@ class ListingWindow
         $result .= ' Bedrooms';
         $result .= '</p>';
         $result .= '<p>';
-        if ($listing->getStatus() === 1) {
+        if ($listing->getStatus() == 1) {
             $result .= "For Sale";
         }else{
             $result .= "Sold";
