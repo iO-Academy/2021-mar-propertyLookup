@@ -42,10 +42,6 @@ use ListingsApp\Classes\ListingWindow;
 
         $listing = $hydrator->getListing($db, $agentRef);
 
-        echo '<pre>';
-        var_dump($listing);
-        echo '</pre>';
-
         echo ListingWindow::displayListing($listing)
     ?>
 
