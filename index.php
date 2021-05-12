@@ -1,5 +1,8 @@
 <?php
 require_once 'vendor/autoload.php';
+use ListingsApp\Classes\Listing;
+use ListingsApp\Classes\ListingHydrator;
+use ListingsApp\Classes\ListingWindow;
 $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
 ?>
 

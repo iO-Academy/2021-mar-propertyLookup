@@ -1,10 +1,16 @@
 <?php
 namespace ListingsApp\Classes;
+use PDO;
 class DBPopulator {
-    private object $listingAPI;
-    private object $dbConnection;
+    private ListingAPI $listingAPI;
+    private PDO $dbConnection;
     private array $listings;
-    public function __construct($listingAPI, $db) {
+    /**
+     * DBPopulator constructor.
+     * @param $listingAPI
+     * @param $db
+     */
+    public function __construct(ListingAPI $listingAPI, PDO $db) {
         $this->listingAPI = $listingAPI;
         $this->dbConnection = $db;
         $this->populateDBAllTables();
@@ -12,6 +18,7 @@ class DBPopulator {
 
     /**
      * fills listings table in listings-feed db
+     * @return void
      */
     private function populateDBListingsTable(): void {
         $this->emptyDB('listings');
@@ -35,6 +42,7 @@ class DBPopulator {
 
     /**
      * fills types tables in listings-feed db
+     * @return void
      */
     private function populateDBTypesTable(): void {
         $this->emptyDB('types');
@@ -48,6 +56,7 @@ class DBPopulator {
 
     /**
      * fills statuses tables in listings-feed db
+     * @return void
      */
     private function populateDBStatusesTable(): void {
         $this->emptyDB('statuses');
@@ -62,6 +71,7 @@ class DBPopulator {
     /**
      * empties each table (called before it repopulates them)
      * @param $tableName
+     * @return void
      *
      */
     private function emptyDB($tableName): void {
@@ -72,6 +82,7 @@ class DBPopulator {
 
     /**
      * populates all tables
+     * @return void
      */
     public function populateDBAllTables(): void {
     $this->populateDBListingsTable();
