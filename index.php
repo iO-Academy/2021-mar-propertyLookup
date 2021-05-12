@@ -1,6 +1,12 @@
 <?php
-use ListingsApp\Classes\Example;
+use ListingsApp\Classes\ListingAPI;
 require_once 'vendor/autoload.php';
+
+$trial = new ListingAPI();
+var_dump($trial->getStatusesFromApi());
+var_dump($trial->getTypesFromApi());
+var_dump($trial->getListingsFromApi());
+
 ?>
 
 <!DOCTYPE html>
@@ -36,3 +42,4 @@ require_once 'vendor/autoload.php';
     </div>
 </body>
 </html>
+
