@@ -36,14 +36,36 @@ require_once 'vendor/autoload.php';
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+            <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Max Price
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/components/dropdowns/">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </div>
-            <h3>Min Price</h3>
-            <h3>Max Price</h3>
-            <h3>Bedrooms</h3>
+            <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Number of bedrooms
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/components/dropdowns/">One</a>
+                    <a class="dropdown-item" href="#">Two</a>
+                    <a class="dropdown-item" href="#">Three</a>
+                    <a class="dropdown-item" href="#">Four</a>
+                    <a class="dropdown-item" href="#">Five or more</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -55,3 +77,5 @@ require_once 'vendor/autoload.php';
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
+
+

@@ -39,8 +39,8 @@ body {
   margin: 0;
   font-family: Verdana, sans-serif;
   color: #E7ECF8;
-  border: 0;
   background-color: #21264D;
+  border: 0;
   justify-content: space-around;
 }
 
@@ -93,6 +93,12 @@ body {
   display: flex;
   justify-content: space-around;
   height: 50px;
+}
+.bootstrapTable {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+
 }
 
 .pageContent {
