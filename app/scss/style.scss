@@ -96,6 +96,11 @@ body {
 }
 
 .pageContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
-
+.listingCard {
+  justify-items: center;
+  align-items: center;
 }
