@@ -2,13 +2,18 @@
 
 
 namespace ListingsApp\Classes;
+require_once '../../vendor/autoload.php';
 
 use PDO;
 
+/** connects to database
+ * @return PDO
+ */
+
 function getDB(): PDO
 {
-    $db = new PDO('mysql:host=db;dbname=estateAgent', 'root', 'password');
-    return $db;
+    return new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
+
 }
 /**
  * Class ListingHydrator
@@ -19,7 +24,7 @@ class ListingHydrator
 {
     public static function getForSaleListings(PDO $db): array
     {
-        $query = $db->prepare('SELECT * FROM `listings` WHERE `type` = 1;');
+        $query = $db->prepare('SELECT * FROM `listings` WHERE `TYPE` = 1;');
         $query->execute();
         $query->setFetchMode(PDO::FETCH_CLASS, Listing::class );
         return $query->fetchAll();
@@ -27,9 +32,15 @@ class ListingHydrator
 
     public static function getForLetListings(PDO $db): array
     {
-        $query = $db->prepare('SELECT * FROM `listings` WHERE `type` = 2;');
+        $query = $db->prepare('SELECT * FROM `listings` WHERE `TYPE` = 2;');
         $query->execute();
         $query->setFetchMode(PDO::FETCH_CLASS, Listing::class);
         return $query->fetchAll();
     }
 }
+
+$db = getDB();
+$newListing = new ListingHydrator();
+echo '<pre>';
+var_dump($newListing::getForSaleListings($db));
+echo '</pre>';

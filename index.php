@@ -2,5 +2,11 @@
 use ListingsApp\Classes\Example;
 require_once 'vendor/autoload.php';
 
-$a = new Example();
-$a->hello();
+?>
+
+<a href="index.php?type=sales"><button>Sales</button></a>
+<a href="index.php?type=lets"><button>Lettings</button></a>
+
+<?php
+
+?>
