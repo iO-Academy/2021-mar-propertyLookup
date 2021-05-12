@@ -40,5 +40,102 @@
   content: '£';
 }
 
+.listingCard {
+  margin: 10px auto;
+  padding: 10px 0;
+  color: #21264D;
+  background: transparent;
+  border: 2px solid #E7ECF8;
 
+  img {
+    max-height: 160px;
+    max-width: 230px;
+    margin: auto;
+    padding-top: 15px;
+
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 25px;
+    font-size: 1.1rem;
+    color: #E7ECF8;
+  }
+
+  h5 {
+    color: #E7ECF8;
+    padding-left: 25px;
+    padding-top: 10px;
+  }
+
+  button {
+    background: #E7ECF8;
+    color: #21264D;
+    border: none;
+    margin: 10px auto;
+    justify-content: center;
+    padding: 5px 10px;
+  }
+
+  a {
+    margin: 10px auto;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  button:hover {
+    background-color: transparent;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.viewPropertyButton {
+  display:flex;
+}
+
+//media queries
+
+@media screen and (max-width:900px) {
+  .pageContent {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin:auto;
+  }
+  .listingCard {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .pageContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+  .listingCard {
+    width:350px;
+  }
+  .jumbotron {
+    display:none;
+  }
+  .smallTitle {
+
+    h1 {
+      display: contents;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 2rem;
+    }
+
+    h2 {
+      display: contents;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+  }
+}
 

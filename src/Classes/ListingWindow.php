@@ -3,7 +3,11 @@
 
 namespace ListingsApp\Classes;
 
-
+/**
+ * view helper design pattern
+ * Class ListingWindow
+ * @package ListingsApp\Classes
+ */
 class ListingWindow
 {
     static function displayListing($listing): string
@@ -39,6 +43,11 @@ class ListingWindow
         return  $result;
     }
 
+    /**
+     * displaying the listings in HTML on index.php
+     * @param array $listings
+     * @return string
+     */
     static function displayListings(array $listings): string
     {
         $result = '';
