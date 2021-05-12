@@ -41,8 +41,9 @@ class ListingWindow
 
     static function displayListings(array $listings): string
     {
+        $result = '';
         foreach($listings as $listing) {
-            $result = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/';
+            $result .= '<img src ="https://dev.io-academy.uk/resources/property-feed/images/';
             $result .= $listing->getImage();
             $result .= '"/>';
             $result .= '<div class= "infoDisplay">';
@@ -59,7 +60,7 @@ class ListingWindow
             $result .= '<p class="priceDisplay">';
             $result .= number_format($listing->getPrice());
             $result .= '</p>';
-            return $result;
         }
+        return $result;
     }
 }
