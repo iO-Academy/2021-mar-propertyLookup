@@ -12,40 +12,11 @@ class Listing
  protected string $town;
  protected string $postcode;
  protected string $description;
- protected int $bedrooms;
- protected int $price;
+ protected string $bedrooms;
+ protected string $price;
  protected string $image;
- protected int $type;
- protected int $status;
-
-    /**
-     * Listing constructor.
-     * @param string $agent_ref
-     * @param string $address_1
-     * @param string $address_2
-     * @param string $town
-     * @param string $postcode
-     * @param string $description
-     * @param int $bedrooms
-     * @param int $price
-     * @param string $image
-     * @param int $type
-     * @param int $status
-     */
-    public function __construct(string $agent_ref, string $address_1, string $address_2, string $town, string $postcode, string $description, int $bedrooms, int $price, string $image, int $type, int $status)
-    {
-        $this->agent_ref = $agent_ref;
-        $this->address_1 = $address_1;
-        $this->address_2 = $address_2;
-        $this->town = $town;
-        $this->postcode = $postcode;
-        $this->description = $description;
-        $this->bedrooms = $bedrooms;
-        $this->price = $price;
-        $this->image = $image;
-        $this->type = $type;
-        $this->status = $status;
-    }
+ protected string $type;
+ protected string $status;
 
     /**
      * @return string
@@ -98,7 +69,7 @@ class Listing
     /**
      * @return int
      */
-    public function getBedrooms(): int
+    public function getBedrooms(): string
     {
         return $this->bedrooms;
     }
@@ -106,7 +77,7 @@ class Listing
     /**
      * @return int
      */
-    public function getPrice(): int
+    public function getPrice(): string
     {
         return $this->price;
     }
@@ -122,7 +93,7 @@ class Listing
     /**
      * @return int
      */
-    public function getType(): int
+    public function getType(): string
     {
         return $this->type;
     }
@@ -130,11 +101,12 @@ class Listing
     /**
      * @return int
      */
-    public function getStatus(): int
+    public function getStatus(): string
     {
-        return $this->status;
-        if ($this === 1){
+        if ($this->status == 1) {
             return "For Sale";
+        } else {
+            return "Sold";
         }
     }
 

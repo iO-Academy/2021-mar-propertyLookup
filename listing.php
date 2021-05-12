@@ -1,37 +1,56 @@
 <?php
 require_once 'vendor/autoload.php';
 use ListingsApp\Classes\Listing;
+use ListingsApp\Classes\ListingHydrator;
 use ListingsApp\Classes\ListingWindow;
-$newListing = new Listing("CSL123_100259","Hill Farm","Plough Hill Road","Nuneaton","CV11 6PE","This is a rare opportunity...",6,355000,"CSL123_100327_IMG_00.JPG",1,1);
-$newListingWindow= new ListingWindow();
-ListingWindow::displayListing($newListing);
-echo ListingWindow::displayListing($newListing);
 
 ?>
-<html>
 
-<section>
-    <img>
-    <div>
-     <div>
-     <p> </p>
-     <p> </p>
-     <p> </p>
-     <p> </p>
-     <p> </p>
-     </div>
-     <div>
-        <h5></h5>
-         <p></p>
-
-     </div>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="normalize" href="app/css/normalize.css"/>
+    <link rel="stylesheet" href="app/css/style.css"/>
+    <title>Solid Properties</title>
+</head>
+<body>
+<div class="header">
+    <div class="basicNavbar">
+        <div class="basicNavbarButtons">
+            <button id="allBtn">All</button>
+            <button id="salesBtn">Sales</button>
+            <button id="lettingsBtn">Lettings</button>
+        </div>
     </div>
-</html>
+    <div class="jumbotron">
+        <div class="overlay">
+            <h1>SOLID</h1>
+            <h2>Properties</h2>
+        </div>
+    </div>
+</div>
 
+<section id="listingDisplay">
+    <?php
+        $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
 
+        $agentRef = 'CSL123_100259';
 
+        $hydrator = new ListingHydrator();
 
+        $listing = $hydrator->getListing($db, $agentRef);
+
+        echo '<pre>';
+        var_dump($listing);
+        echo '</pre>';
+
+        echo ListingWindow::displayListing($listing)
+    ?>
 
 </section>
+
+
+</body>
+</html>
