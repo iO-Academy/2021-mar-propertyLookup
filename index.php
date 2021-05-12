@@ -33,48 +33,47 @@ require_once 'vendor/autoload.php';
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Min Price
                 </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">£100,000</a>
-                        <a class="dropdown-item" href="#">£200,000</a>
-                        <a class="dropdown-item" href="#">£300,000</a>
-                        <a class="dropdown-item" href="#">£400,000</a>
-                        <a class="dropdown-item" href="#">£500,000</a>
-                        <a class="dropdown-item" href="#">£600,000</a>
-                        <a class="dropdown-item" href="#">£700,000</a>
-                    </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">£100,000</a>
+                    <a class="dropdown-item" href="#">£200,000</a>
+                    <a class="dropdown-item" href="#">£300,000</a>
+                    <a class="dropdown-item" href="#">£400,000</a>
+                    <a class="dropdown-item" href="#">£500,000</a>
+                    <a class="dropdown-item" href="#">£600,000</a>
+                    <a class="dropdown-item" href="#">£700,000</a>
+                </div>
             </div>
             <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Max Price
                 </a>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">£200,000</a>
-                        <a class="dropdown-item" href="#">£300,000</a>
-                        <a class="dropdown-item" href="#">£400,000</a>
-                        <a class="dropdown-item" href="#">£500,000</a>
-                        <a class="dropdown-item" href="#">£600,000</a>
-                        <a class="dropdown-item" href="#">£700,000</a>
-                        <a class="dropdown-item" href="#">£800,000</a>
-                        <a class="dropdown-item" href="#">£900,000</a>
-                        <a class="dropdown-item" href="#">£1,000,000</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">£200,000</a>
+                    <a class="dropdown-item" href="#">£300,000</a>
+                    <a class="dropdown-item" href="#">£400,000</a>
+                    <a class="dropdown-item" href="#">£500,000</a>
+                    <a class="dropdown-item" href="#">£600,000</a>
+                    <a class="dropdown-item" href="#">£700,000</a>
+                    <a class="dropdown-item" href="#">£800,000</a>
+                    <a class="dropdown-item" href="#">£900,000</a>
+                    <a class="dropdown-item" href="#">£1,000,000</a>
                 </div>
             </div>
             <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Number of bedrooms
                 </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/components/dropdowns/">One</a>
-                        <a class="dropdown-item" href="#">Two</a>
-                        <a class="dropdown-item" href="#">Three</a>
-                        <a class="dropdown-item" href="#">Four</a>
-                        <a class="dropdown-item" href="#">Five or more</a>
-                    </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/components/dropdowns/">One</a>
+                    <a class="dropdown-item" href="#">Two</a>
+                    <a class="dropdown-item" href="#">Three</a>
+                    <a class="dropdown-item" href="#">Four</a>
+                    <a class="dropdown-item" href="#">Five or more</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 <div class="pageContent">
 
 </div>
