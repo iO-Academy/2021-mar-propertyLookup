@@ -3,6 +3,10 @@
 
 namespace ListingsApp\Classes;
 
+/**
+ * Class Listing
+ * @package ListingsApp\Classes
+ */
 
 class Listing
 {
