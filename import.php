@@ -8,4 +8,4 @@ $listingAPI = new ListingAPI();
 $dbPopulator = new DBPopulator($listingAPI, $db);
 
 
-//$dbPopulator->populateDBAllTables();
+$dbPopulator->populateDBAllTables();

@@ -7,9 +7,10 @@ class DBPopulator {
     public function __construct($listingAPI, $db) {
         $this->listingAPI = $listingAPI;
         $this->dbConnection = $db;
-        $this->emptyDB();
+        $this->populateDBAllTables();
     }
-    public function populateDBListingsTable() {
+    private function populateDBListingsTable() {
+        $this->emptyDB('listings');
         $this->listings = $this->listingAPI->getListingsFromApi();
         foreach($this->listings as $listing) {
             $query = $this->dbConnection->prepare('INSERT INTO `listings` (`AGENT_REF`, `ADDRESS_1`, `ADDRESS_2`, `TOWN`, `POSTCODE`, `DESCRIPTION`, `BEDROOMS`, `PRICE`, `IMAGE`, `TYPE`, `STATUS`) VALUES (:agent_ref, :address_1, :address_2, :town, :postcode, :description, :bedrooms, :price, :image, :type, :status);');
@@ -28,7 +29,8 @@ class DBPopulator {
         }
     }
 
-    public function populateDBTypesTable() {
+    private function populateDBTypesTable() {
+        $this->emptyDB('types');
         $this->listings = $this->listingAPI->getTypesFromApi();
         foreach ($this->listings as $listing) {
             $query = $this->dbConnection->prepare('INSERT INTO `types` (`TYPE_NAME`) VALUES (:type_name);');
@@ -37,7 +39,8 @@ class DBPopulator {
         }
     }
 
-    public function populateDBStatusesTable() {
+    private function populateDBStatusesTable() {
+        $this->emptyDB('statuses');
         $this->listings = $this->listingAPI->getStatusesFromApi();
         foreach ($this->listings as $listing) {
             $query = $this->dbConnection->prepare('INSERT INTO `statuses` (`STATUS_NAME`) VALUES (:status_name);');
@@ -46,9 +49,10 @@ class DBPopulator {
         }
     }
 
-    private function emptyDB() {
-        $query = $this->dbConnection->prepare('TRUNCATE TABLE `types`, `statuses`, `listings`;');
-        $query->execute();
+    private function emptyDB($tableName) {
+      $emptyTableQuery = "TRUNCATE TABLE `$tableName`";
+      $statement = $this->dbConnection->prepare($emptyTableQuery);
+      $statement->execute();
     }
 
     public function populateDBAllTables() {
