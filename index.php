@@ -28,7 +28,6 @@ require_once 'vendor/autoload.php';
             <h2>Properties</h2>
         </div>
     </div>
-    <div class="boostrapNavbar">
         <div class="bootstrapTable">
             <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,6 +47,7 @@ require_once 'vendor/autoload.php';
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Max Price
                 </a>
+
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="#">£200,000</a>
                         <a class="dropdown-item" href="#">£300,000</a>
@@ -72,7 +72,6 @@ require_once 'vendor/autoload.php';
                         <a class="dropdown-item" href="#">Five or more</a>
                     </div>
             </div>
-
         </div>
     </div>
 </div>
