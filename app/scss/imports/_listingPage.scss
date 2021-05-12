@@ -1,0 +1,41 @@
+#listingDisplay {
+  display: grid;
+  grid-template-areas:
+          "img info"
+          "img desc";
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 20px;
+  & img {
+    grid-area: img;
+    max-height: 464px;
+    max-width: 620px;
+    margin-top: .8rem;
+  }
+}
+
+.infoDisplay {
+  grid-area: info;
+  & p {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #E7ECF8;
+    font-size: .9rem;
+    letter-spacing: .2rem;
+  }
+}
+
+.descriptionDisplay {
+  grid-area: desc;
+  & h3 {
+    font-size: 1.5rem;
+    letter-spacing: .2rem;
+  }
+  & p {
+    text-align: justify;
+    line-height: 1.2rem;
+    font-size: .8rem;
+  }
+}
+
+.priceDisplay::before {
+  content: '£';
+}
