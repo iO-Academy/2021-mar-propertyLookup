@@ -1,28 +1,27 @@
 <?php
 
-
 namespace ListingsApp\Classes;
-use PDO;
+require_once '../../vendor/autoload.php';
 
-//<a href="index.php?type=1">Sales</a>
-//<a href="index.php?type=2">Lettings</a>
+use PDO;
 
 class ListingsWindow
 {
-
-    public static function displayListings($data): string
+    /**
+     * @param $listing - a hydrated Listing object
+     * @return string - HTML content to display on listing.php
+     */
+    public static function displayListings($listing): string
     {
-
+        $result = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/' . $listing->getImage() . '"/>';
+        $result .= '<p>'. $listing->getAddress2() . '</p>';
+        $result .= '<p>' . $listing->getStatus() . '</p>';
+        return  $result;
     }
-
 }
 
-//$type = $_GET["type"];
-//if (isset($type)){
-//    if ($type === 'sales') {
-//        //return displayListing(sales)
-//    }
-//    if ($type === 'lettings') {
-//        //return ListingHydrator::getForLetListings($db);
-//    }
-//}
+$db = new PDO;
+$listing = new ListingHydrator();
+$listing::getListingsByType($db, $_GET["type"]);
+$display = new ListingsWindow();
+$display::displayListings($listing);

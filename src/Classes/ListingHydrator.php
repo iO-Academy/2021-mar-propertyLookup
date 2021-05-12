@@ -19,8 +19,8 @@ class ListingHydrator
      */
     public static function getListingsByType(PDO $db, int $type): array
     {
-        $query = $db->prepare('SELECT agent_ref, address_1,  address_2, town, postcode,  description, bedrooms, price, image, status_name 
-            AS `status` 
+        $query = $db->prepare('SELECT `agent_ref`, `address_1`,  `address_2`, `town`, `postcode`,  `description`, `bedrooms`, `price`, `image`, `status_name` 
+            AS `status`; 
             FROM `listings` 
             INNER JOIN `statuses`
             ON `listings`.`status` = `statuses`.`id`
