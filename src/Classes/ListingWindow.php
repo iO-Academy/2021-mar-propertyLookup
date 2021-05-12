@@ -43,6 +43,7 @@ class ListingWindow
     {
         $result = '';
         foreach($listings as $listing) {
+            $agentRef = $listing->getAgentRef();
             $result .= "<div class='listingCard card' style='width: 18rem;'>";
             $result .= '<img class="card-img-top" alt="Image of property" src="https://dev.io-academy.uk/resources/property-feed/images/' . $listing->getImage() . '"/>';
             $result .= '<div class= "listingInfo">';
@@ -52,8 +53,9 @@ class ListingWindow
             $result .= '<li>' . $listing->getPostcode() . '</li>';
             $result .= '<li>' . $listing->getStatus() . '</li>';
             $result .= '<li>' . $listing->getBedrooms() . ' Bedrooms';
-            $result .= '<div>';
-            $result .= '<button type="button" class="btn btn-primary btn-sm"><span>View property</span></button>';
+            $result .= '</ul>';
+            $result .= '<div class="viewPropertyButton">';
+            $result .= '<a href="listing.php?agentRef=' . $agentRef .' "><button type="button" class="btn btn-primary btn-sm"><span>View property</span></button></a>';
             $result .= '</div>';
             $result .= '</div>';
             $result .= '</div>';
