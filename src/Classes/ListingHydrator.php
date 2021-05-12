@@ -19,12 +19,12 @@ class ListingHydrator
      */
     public static function getListingsByType(PDO $db, int $type): array
     {
-        $query = $db->prepare('SELECT agent_ref, address_1,  address_2, town, postcode,  description, bedrooms, price, image, status_name 
+        $query = $db->prepare('SELECT `agent_ref`, `address_1`,  `address_2`, `town`, `postcode`,  `description`, `bedrooms`, `price`, `image`, `status_name` 
             AS `status` 
             FROM `listings` 
             INNER JOIN `statuses`
             ON `listings`.`status` = `statuses`.`id`
-            WHERE `type` = :type;');
+            WHERE `type`= :type;');
         $query->bindParam('type', $type);
         $query->execute();
         $query->setFetchMode(PDO::FETCH_CLASS, Listing::class );
