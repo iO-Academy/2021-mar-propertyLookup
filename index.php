@@ -28,13 +28,11 @@ require_once 'vendor/autoload.php';
             <h2>Properties</h2>
         </div>
     </div>
-    <div class="boostrapNavbar">
         <div class="bootstrapTable">
             <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Min Price
                 </a>
-
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
@@ -45,7 +43,6 @@ require_once 'vendor/autoload.php';
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Max Price
                 </a>
-
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/components/dropdowns/">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
@@ -56,7 +53,6 @@ require_once 'vendor/autoload.php';
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Number of bedrooms
                 </a>
-
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/components/dropdowns/">One</a>
                     <a class="dropdown-item" href="#">Two</a>
@@ -65,7 +61,6 @@ require_once 'vendor/autoload.php';
                     <a class="dropdown-item" href="#">Five or more</a>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

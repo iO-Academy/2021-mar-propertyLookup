@@ -39,7 +39,7 @@ body {
   margin: 0;
   font-family: Verdana, sans-serif;
   color: #E7ECF8;
-  background-color: #21264D;
+  background-color: transparent;
   border: 0;
   justify-content: space-around;
 }
@@ -88,17 +88,20 @@ body {
     overflow: hidden;
   }}
 
-.boostrapNavbar {
-  background: #21264D;
-  display: flex;
-  justify-content: space-around;
-  height: 50px;
-}
 .bootstrapTable {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-
+  background: #21264D;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+}
+#dropdownMenuLink {
+  background-color: transparent;
+  border: 0;
+  font-size: 1.3rem;
 }
 
 .pageContent {
