@@ -103,8 +103,10 @@ class Listing
      */
     public function getStatus(): string
     {
-        if ($this->status === 1) {
+        if ($this->status == 1) {
             return "For Sale";
+        } else {
+            return "Sold";
         }
     }
 

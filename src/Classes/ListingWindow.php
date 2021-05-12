@@ -20,11 +20,7 @@ class ListingWindow
         $result .= ' Bedrooms';
         $result .= '</p>';
         $result .= '<p>';
-        if ($listing->getStatus() == 1) {
-            $result .= "For Sale";
-        }else{
-            $result .= "Sold";
-        }
+        $result .= $listing->getStatus();
         $result .= '</p>';
         $result .= '<p class="priceDisplay">';
         $result .= number_format($listing->getPrice());
