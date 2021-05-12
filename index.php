@@ -1,12 +1,8 @@
 <?php
-use ListingsApp\Classes\ListingAPI;
 require_once 'vendor/autoload.php';
-
-$trial = new ListingAPI();
-var_dump($trial->getStatusesFromApi());
-var_dump($trial->getTypesFromApi());
-var_dump($trial->getListingsFromApi());
-
+use ListingsApp\Classes\Listing;
+use ListingsApp\Classes\ListingHydrator;
+use ListingsApp\Classes\ListingWindow;
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +34,14 @@ var_dump($trial->getListingsFromApi());
         </div>
     </div>
     <div class="pageContent">
+        <?php
+        $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
+        $listings = ListingHydrator::getAllListings($db);
+        echo '<pre>';
+        var_dump($listings);
+        echo '</pre>';
 
+        ?>
     </div>
 </body>
 </html>
