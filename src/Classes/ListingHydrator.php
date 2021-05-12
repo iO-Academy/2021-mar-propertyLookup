@@ -2,19 +2,7 @@
 
 
 namespace ListingsApp\Classes;
-require_once '../../vendor/autoload.php';
 
-use PDO;
-
-/** connects to database
- * @return PDO
- */
-
-function getDB(): PDO
-{
-    return new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
-
-}
 /**
  * Class ListingHydrator
  * @package ListingsApp\Classes
@@ -22,19 +10,17 @@ function getDB(): PDO
 
 class ListingHydrator
 {
-    public static function getForSaleListings(PDO $db): array
+    /**
+     * @param PDO $db
+     * @param string $type
+     * @return array
+     */
+    public static function getListingsByType(PDO $db, string $type): array
     {
-        $query = $db->prepare('SELECT * FROM `listings` WHERE `type` = 1;');
+        $query = $db->prepare('SELECT * FROM `listings` WHERE `type` = :type;');
+        $query->bindParam('type', $type);
         $query->execute();
         $query->setFetchMode(PDO::FETCH_CLASS, Listing::class );
-        return $query->fetchAll();
-    }
-
-    public static function getForLetListings(PDO $db): array
-    {
-        $query = $db->prepare('SELECT * FROM `listings` WHERE `type` = 2;');
-        $query->execute();
-        $query->setFetchMode(PDO::FETCH_CLASS, Listing::class);
         return $query->fetchAll();
     }
 }
