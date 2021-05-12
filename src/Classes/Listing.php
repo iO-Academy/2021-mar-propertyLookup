@@ -3,6 +3,10 @@
 
 namespace ListingsApp\Classes;
 
+/**
+ * Class Listing
+ * @package ListingsApp\Classes
+ */
 
 class Listing
 {
@@ -92,8 +96,6 @@ class Listing
      */
     public function getStatus(): string
     {
-        if ($this->status === 1) {
-            return "For Sale";
-        }
+return $this->status;
     }
 }
