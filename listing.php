@@ -36,7 +36,7 @@ use ListingsApp\Classes\ListingWindow;
     <?php
         $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
 
-        $agentRef = 'CSL123_100278';
+       $agentRef= $_GET['agentRef'];
 
         $hydrator = new ListingHydrator();
 
