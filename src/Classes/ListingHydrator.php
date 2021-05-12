@@ -1,6 +1,4 @@
 <?php
-
-
 namespace ListingsApp\Classes;
 use Listing;
 use ListingsApp\Classes\ListingWindow;
@@ -9,7 +7,7 @@ $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
 
 class ListingHydrator
 {
-    private object $dbConnection;
+    private PDO $dbConnection;
     public function __construct($db) {
         $this->dbConnection = $db;
     }
