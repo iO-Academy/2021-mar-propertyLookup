@@ -1,9 +1,6 @@
 <?php
-
-<<<<<<< HEAD
 require_once 'vendor/autoload.php';
 $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
-=======
 ?>
 
 <!DOCTYPE html>
@@ -39,5 +36,4 @@ $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
     </div>
 </body>
 </html>
->>>>>>> dd9109ab343befe7ace482a45e5296073294fb6d
 
