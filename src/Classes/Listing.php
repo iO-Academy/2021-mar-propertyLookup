@@ -20,21 +20,21 @@ class Listing
  protected string $image;
  protected string $type;
  protected string $status;
-
-    public function __construct(string $agent_ref='CSL123_100259', string $address_1= 'Hill Farm', string $address_2='Plough Hill Road', string $town='Nuneaton', string $postcode='CV11 6PE', string $description='This is a rare opportunity...', string $bedrooms='6', string $price='355000', string $image='CSL123_100327_IMG_00.JPG', string $type='1', string $status='1')
-    {
-        $this->agent_ref = $agent_ref;
-        $this->address_1 = $address_1;
-        $this->address_2 = $address_2;
-        $this->town = $town;
-        $this->postcode = $postcode;
-        $this->description = $description;
-        $this->bedrooms = $bedrooms;
-        $this->price = $price;
-        $this->image = $image;
-        $this->type = $type;
-        $this->status = $status;
-    }
+//
+//    public function __construct(string $agent_ref='CSL123_100259', string $address_1= 'Hill Farm', string $address_2='Plough Hill Road', string $town='Nuneaton', string $postcode='CV11 6PE', string $description='This is a rare opportunity...', string $bedrooms='6', string $price='355000', string $image='CSL123_100327_IMG_00.JPG', string $type='1', string $status='1')
+//    {
+//        $this->agent_ref = $agent_ref;
+//        $this->address_1 = $address_1;
+//        $this->address_2 = $address_2;
+//        $this->town = $town;
+//        $this->postcode = $postcode;
+//        $this->description = $description;
+//        $this->bedrooms = $bedrooms;
+//        $this->price = $price;
+//        $this->image = $image;
+//        $this->type = $type;
+//        $this->status = $status;
+//    }
 
     /**
      * @return string
