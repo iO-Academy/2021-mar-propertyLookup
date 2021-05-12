@@ -1,9 +1,8 @@
 <?php
 
 namespace ListingsApp\Classes;
-require_once '../../vendor/autoload.php';
 
-use PDO;
+
 
 class ListingsWindow
 {
@@ -13,15 +12,12 @@ class ListingsWindow
      */
     public static function displayListings($listing): string
     {
-        $result = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/' . $listing->getImage() . '"/>';
-        $result .= '<p>'. $listing->getAddress2() . '</p>';
-        $result .= '<p>' . $listing->getStatus() . '</p>';
+        $result = '';
+        foreach($listing as $item){
+            $result .= '<img src ="https://dev.io-academy.uk/resources/property-feed/images/' . $item->getImage() . '"/>';
+            $result .= '<p>'. $item->getAddress2() . '</p>';
+            $result .= '<p>' . $item->getStatus() . '</p>';
+        }
         return  $result;
     }
 }
-
-$db = new PDO;
-$listing = new ListingHydrator();
-$listing::getListingsByType($db, $_GET["type"]);
-$display = new ListingsWindow();
-$display::displayListings($listing);

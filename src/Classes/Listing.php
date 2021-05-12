@@ -96,6 +96,6 @@ class Listing
      */
     public function getStatus(): string
     {
-return $this->status;
+        return $this->status;
     }
 }

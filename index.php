@@ -1,8 +1,16 @@
 <?php
-use ListingsApp\Classes\Example;
+
+
+namespace ListingsApp\Classes;
+
 require_once 'vendor/autoload.php';
 
+use PDO;
 
+function connectDB():PDO
+{
+    return new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
+}
 
 ?>
 <html>
@@ -10,14 +18,14 @@ require_once 'vendor/autoload.php';
 <a href="index.php?type=1">Sales</a>
 <a href="index.php?type=2">Lettings</a>
 <?php
-$type = $_GET["type"];
-if (isset($type)){
-    if ($type === 'sales') {
-        return displayListings();
-    }
-    if ($type === 'lettings') {
-        return displayListings();
-    }
+
+if (isset($_GET['type'])){
+    $db = connectDB();
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $data = ListingHydrator::getListingsByType($db, $_GET['type']);
+    var_dump($data);
+    $display = new ListingsWindow();
+    $display::displayListings($data);
 }
 ?>
 
