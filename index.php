@@ -3,6 +3,16 @@
 
 namespace ListingsApp\Classes;
 
+use PDO;
+
+/** connect to database
+ * @return PDO
+ */
+function connectDB():PDO
+{
+    return new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
+}
+
 ?>
 <html>
 <body>
