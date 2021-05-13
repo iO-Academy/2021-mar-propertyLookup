@@ -1,0 +1,23 @@
+
+.bootstrapTable {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  background: $secondary;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+}
+
+.lettingDropdowns {
+  visibility: collapse;
+}
+.salesDropdowns {
+  visibility: collapse;
+}
+#dropdownMenuLink {
+  background-color: transparent;
+  border: 0;
+  font-size: 1.3rem;
+}
