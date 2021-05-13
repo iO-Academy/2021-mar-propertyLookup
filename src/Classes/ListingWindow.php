@@ -51,10 +51,11 @@ class ListingWindow
         $result = '';
         foreach ($listings as $listing) {
             $agentRef = $listing->getAgentRef();
+            $price = intval($listing->getPrice());
             $result .= '<div class="listingCard card">';
             $result .= '<img class="card-img-top" alt="Property for sale at ' . $listing->getAddress2() . '" src="https://dev.io-academy.uk/resources/property-feed/images/' . $listing->getImage() . '"/>';
             $result .= '<div class= "listingInfo">';
-            $result .= '<h5 class="priceDisplay">' . number_format($listing->getPrice()) . '</h5>';
+            $result .= '<h5 class="priceDisplay">' . number_format($price) . '</h5>';
             $result .= '<ul class="list-group list-group-flush">';
             $result .= '<li>' . $listing->getAddress2() . ', ' . $listing->getTown() . '</li>';
             $result .= '<li>' . $listing->getPostcode() . '</li>';
