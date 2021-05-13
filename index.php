@@ -1,6 +1,6 @@
 <?php
 
-use ListingsApp\Classes\ListingsWindow;
+use ListingsApp\Classes\ListingWindow;
 use ListingsApp\Classes\ListingHydrator;
 
 require_once 'vendor/autoload.php';
@@ -23,7 +23,7 @@ function connectDB():PDO
 if (isset($_GET['type'])){
         $db = connectDB();
         $data = ListingHydrator::getListingsByType($db, $_GET['type']);
-        echo ListingsWindow::displayListings($data);
+        echo ListingWindow::displayListings($data);
 }
 ?>
 </body>

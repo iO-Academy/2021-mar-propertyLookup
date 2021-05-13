@@ -3,11 +3,11 @@
 namespace ListingsApp\Classes;
 
 /**
- * Class ListingsWindow
+ * Class ListingWindow
  * @package ListingsApp\Classes
  */
 
-class ListingsWindow
+class ListingWindow
 {
     /**
      * displays each property listing
