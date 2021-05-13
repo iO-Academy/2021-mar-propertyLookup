@@ -1,7 +1,6 @@
 <?php
 
 namespace ListingsApp\Classes;
-
 use PDO;
 
 /**
@@ -11,6 +10,7 @@ use PDO;
 class ListingHydrator
 {
     protected PDO $dbConnection;
+
 
     public function __construct(PDO $db)
     {
@@ -33,13 +33,13 @@ class ListingHydrator
     }
 
     /**
-     * gets all listings from db
-     * @return array of Listing objects
+     * gets all listings from db table listings
+     * @return array
      */
     public function getAllListings(): array
     {
-        $query = $this->dbConnection->prepare("SELECT `agent_ref`, `address_1`, `address_2`, `town`, `postcode`, `description`, `bedrooms`, `price`, `image`, `type`, `status` FROM `listings`;");
-        $query->setFetchMode(PDO::FETCH_CLASS, Listing::class);
+        $query = $this->dbConnection->prepare("SELECT `agent_ref`, `address_1`, `address_2`, `town`, `postcode`, `description`, `bedrooms`, `price`, `image`, `type`, `status_name` AS `status` FROM `listings` INNER JOIN `statuses` ON `listings`.`status` = `statuses`.`id`;");
+        $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Listing::class);
         $query->execute();
         return $query->fetchAll();
     }

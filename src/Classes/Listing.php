@@ -1,6 +1,4 @@
 <?php
-
-
 namespace ListingsApp\Classes;
 
 /**
@@ -9,17 +7,18 @@ namespace ListingsApp\Classes;
  */
 class Listing
 {
- protected string $agent_ref;
- protected string $address_1;
- protected string $address_2;
- protected string $town;
- protected string $postcode;
- protected string $description;
- protected string $bedrooms;
- protected string $price;
- protected string $image;
- protected string $type;
- protected string $status;
+    protected string $agent_ref;
+    protected string $address_1;
+    protected string $address_2;
+    protected string $town;
+    protected string $postcode;
+    protected string $description;
+    protected string $bedrooms;
+    protected string $price;
+    protected string $image;
+    protected string $type;
+    protected string $status;
+
 
     /**
      * Listing constructor. Auto-populated by Hydrator with default properties/constructor in place for unit testing.

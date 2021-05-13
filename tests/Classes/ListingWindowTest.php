@@ -18,6 +18,7 @@ class ListingWindowTest extends TestCase {
      * assert that the actual return value matches the expected return value
      */
     public function testDisplayListing_success()
+
     {
         $listingMock = $this->createMock(Listing::class);
         $listingMock->expects($this->once())
@@ -64,5 +65,51 @@ class ListingWindowTest extends TestCase {
         $this->expectException(Error::class);
         ListingWindow::displayListing(['$listingMock']);
     }
-}
 
+    public function testDisplayListings_success()
+    {
+
+        $listingsMock = $this->createMock(Listing::class);
+        $listingsMock->expects($this->once())
+            ->method('getImage')
+            ->willReturn('CSL123_100327_IMG_00.JPG');
+        $listingsMock->expects($this->any())
+            ->method('getAddress2')
+            ->willReturn('Plough Hill Road');
+        $listingsMock->expects($this->once())
+            ->method('getPostcode')
+            ->willReturn('CV11 6PE');
+        $listingsMock->expects($this->once())
+            ->method('getBedrooms')
+            ->willReturn('6');
+        $listingsMock->expects($this->once())
+            ->method('getStatus')
+            ->willReturn('For Sale');
+        $listingsMock->expects($this->once())
+            ->method('getPrice')
+            ->willReturn('355000');
+        $listingsMock->expects($this->once())
+            ->method('getAgentRef')
+            ->willReturn('CSL123_100259');
+
+        $listingsMockArray = [];
+        $listingsMockArray[] = $listingsMock;
+
+
+        $result = ListingWindow::displayListings($listingsMockArray);
+        $expected = '<div class="listingCard card"><img class="card-img-top" alt="Property for sale at Plough Hill Road" src="https://dev.io-academy.uk/resources/property-feed/images/CSL123_100327_IMG_00.JPG"/><div class= "listingInfo"><h5 class="priceDisplay">355,000</h5><ul class="list-group list-group-flush"><li>Plough Hill Road, </li><li>CV11 6PE</li><li>For Sale</li><li>6 Bedrooms</li></ul><div class="viewPropertyLink"><a href="listing.php?agentRef=CSL123_100259">View property</a></div></div></div>';
+        $this->assertEquals($result, $expected);
+    }
+    public function testDisplayListings_failure1()
+    {
+        $this->expectException(Error::class);
+        ListingWindow::displayListings('$listingsMockArray');
+    }
+
+    public function testDisplayListings_failure2()
+    {
+        $this->expectException(Error::class);
+        ListingWindow::displayListing(['$listingsMockArray']);
+    }
+
+}

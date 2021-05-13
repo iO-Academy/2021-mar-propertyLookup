@@ -1,28 +1,30 @@
 @import 'imports/variables';
 @import 'imports/listingPage';
-
+@import 'imports/salesNavbar';
+@import 'imports/jumbotron';
+@import 'imports/bootstrapfilters';
+@import 'imports/mediaqueries';
 @font-face {
   font-family:'Merriweather', serif;
   src: url("../../resources/Merriweather-Regular.ttf");
 }
-
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
-
 body {
-  background: #161B31;
+  background: $tertiary;
   font-size: 10px;
   margin: 0;
   color: #E7ECF8;
 }
-
+button:focus {
+  tab-index: -1;
+}
 .basicNavbar {
   background: #161B31;
   height: 50px;
 }
-
-.basicNavbarButtons {
+.basicNavbarLinks {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -33,88 +35,24 @@ body {
   width: 100%;
   height: 40px;
   background-color: #21264D;
+  a:hover, a:active, a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
 }
-
-.navButtons {
+.navLinks {
   font-size: 1.5rem;
   margin: 0;
   font-family: Verdana, sans-serif;
   color: #E7ECF8;
-  background-color: transparent;
   border: 0;
+  background-color: #21264D;
   justify-content: space-around;
 }
-
-.jumbotron {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 400px;
-  position: relative;
-  background-image: url("../../resources/builderimg2.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #161B31;
-  margin-bottom: 0;
-  h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 6rem;
-  }
-  h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 2.5rem;
-  }
-
-}
-
-.overlay {
-  font-family: 'Merriweather', serif;
-  color: #E7ECF8;
-  width: 100%;
-  height: 400px;
-  font-size: 3rem;
-  text-align: center;
-  opacity: 100%;
-  margin-top: 0;
-  margin-bottom: auto;
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-
-@media screen and (max-width:710px){
-  .jumbotron {
-    height: 330px;
-    overflow: hidden;
-  }}
-
-.bootstrapTable {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+.boostrapNavbar {
   background: #21264D;
+  display: flex;
   justify-content: space-around;
-  justify-items: center;
-  align-items: center;
   height: 50px;
-}
-@media screen and (max-width:490px){
-  .bootstrapTable {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    height: 150px;
-  }
-}
-
-.lettingDropdowns {
-  visibility: collapse;
-}
-.salesDropdowns {
-  visibility: visible;
-}
-#dropdownMenuLink {
-  background-color: transparent;
-  border: 0;
-  font-size: 1.3rem;
+  color: $primary;
 }

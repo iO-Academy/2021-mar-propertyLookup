@@ -121,13 +121,13 @@ class ListingTest extends TestCase
     }
 
     /**
-     * test success of status getter
+      * test success of status getter
      */
     public function testGetStatus1_success()
     {
         $listing= new Listing('CSL123_100259', 'Hill Farm',  'Plough Hill Road',  'Nuneaton', 'CV11 6PE', 'This is a rare opportunity...',  '6','355000', 'CSL123_100327_IMG_00.JPG','1','For Sale');
         $result= $listing->getStatus();
-        $expected= 'For Sale';
+        $expected = "For Sale";
         $this->assertEquals($expected, $result);
     }
 }
