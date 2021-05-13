@@ -10,18 +10,19 @@ use ListingsApp\Classes\ListingWindow;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="normalize" href="app/css/normalize.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="app/css/style.css"/>
     <title>Solid Properties</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="header">
     <div class="basicNavbar">
         <div class="basicNavbarButtons">
-            <button id="allBtn">All</button>
-            <button id="salesBtn">Sales</button>
-            <button id="lettingsBtn">Lettings</button>
+            <a href="index.php?type=all"><button class="allBtn navButtons" >All</button></a>
+            <a href="index.php?type=sales"><button class="salesBtn navButtons">Sales</button></a>
+            <a href="index.php?type=lettings"><button class="lettingsBtn navButtons">Lettings</button></a>
         </div>
     </div>
     <div class="jumbotron">
@@ -35,18 +36,14 @@ use ListingsApp\Classes\ListingWindow;
 <section id="listingDisplay">
     <?php
         $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
-
-        $agentRef = 'CSL123_100259';
-
+       $agentRef= $_GET['agentRef'];
         $hydrator = new ListingHydrator();
-
         $listing = $hydrator->getListing($db, $agentRef);
-
         echo '<pre>';
         var_dump($listing);
         echo '</pre>';
-
         echo ListingWindow::displayListing($listing);
+        echo ListingWindow::displayListing($listing)
     ?>
 
 </section>

@@ -22,6 +22,9 @@ body {
   font-size: 10px;
   margin: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> s3t2
   color: #E7ECF8;
 }
 
@@ -48,8 +51,13 @@ body {
   margin: 0;
   font-family: Verdana, sans-serif;
   color: #E7ECF8;
+<<<<<<< HEAD
   border: 0;
   background-color: #21264D;
+=======
+  background-color: transparent;
+  border: 0;
+>>>>>>> s3t2
   justify-content: space-around;
 }
 
@@ -62,6 +70,7 @@ body {
   background-image: url("../../resources/builderimg2.png");
   background-size: cover;
   background-repeat: no-repeat;
+<<<<<<< HEAD
     h1 {
       margin-top: 0;
       margin-bottom: 0;
@@ -77,6 +86,21 @@ body {
 
 .smallTitle {
   display: none;
+=======
+  background-color: #161B31;
+  margin-bottom: 0;
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 6rem;
+  }
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+  }
+
+>>>>>>> s3t2
 }
 
 .overlay {
@@ -99,49 +123,79 @@ body {
     overflow: hidden;
   }}
 
+
 .boostrapNavbar {
-  background: #21264D;
-  display: flex;
-  justify-content: space-around;
-  height: 50px;
-  color: $primary;
-}
-
-.pageContent {
-  padding-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: auto auto;
-}
-
-@media screen and (max-width:900px) {
-  .pageContent {
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    margin:auto;
-  }
-  .listingCard {
-    justify-content: space-around;
-  }
-}
-
-@media screen and (max-width:450px) {
-  .pageContent {
+  .bootstrapTable {
     display: grid;
-    grid-template-columns: 1fr;
-    margin: auto;
-  }
-  .listingCard {
-    width:350px;
-  }
-  .jumbotron {
-    display:none;
-  }
-  .smallTitle {
-    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    background: #21264D;
+    justify-content: space-around;
+    justify-items: center;
     align-items: center;
-    justify-content: center;
-    color:  #E7ECF8;
-    position: relative;
+    height: 50px;
+    color: $primary;
   }
 }
+
+  @media screen and (max-width: 490px) {
+    .bootstrapTable {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      height: 150px;
+    }
+  }
+
+  .pageContent {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto auto;
+  }
+
+  @media screen and (max-width: 900px) {
+    .pageContent {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: auto;
+    }
+    .listingCard {
+      justify-content: space-around;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .pageContent {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin: auto;
+    }
+    .listingCard {
+      width: 350px;
+    }
+    .jumbotron {
+      display: none;
+    }
+    .smallTitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #E7ECF8;
+      position: relative;
+    }
+  }
+
+  .lettingDropdowns {
+    visibility: collapse;
+  }
+
+  .salesDropdowns {
+    visibility: visible;
+  }
+
+  #dropdownMenuLink {
+    background-color: transparent;
+    border: 0;
+    font-size: 1.3rem;
+  }
+
