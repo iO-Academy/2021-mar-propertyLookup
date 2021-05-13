@@ -122,13 +122,62 @@ class ListingTest extends TestCase
     }
 
     /**
-     * test success of status getter
+     * test success of status getter if status is 1
      */
-    public function testGetStatus_success()
+    public function testGetStatus1_success()
     {
         $listing= new Listing();
+        $listing->setStatus('1');
         $result= $listing->getStatus();
         $expected= 'For Sale';
         $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * test success of status getter if status is 2
+     */
+    public function testGetStatus2_success()
+    {
+        $listing= new Listing();
+        $listing->setStatus('2');
+        $result= $listing->getStatus();
+        $expected= 'Sold';
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * test success of status getter if status is 3
+     */
+    public function testGetStatus3_success()
+    {
+        $listing= new Listing();
+        $listing->setStatus('3');
+        $result= $listing->getStatus();
+        $expected= 'To Let';
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * test success of status getter if status is 4
+     */
+    public function testGetStatus4_success()
+    {
+        $listing= new Listing();
+        $listing->setStatus('4');
+        $result= $listing->getStatus();
+        $expected= 'Let Agreed';
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * test success of status setter
+     */
+    public function testSetStatus_success()
+    {
+        $listing = new Listing();
+        $expected = 'Let Agreed';
+        $listing->setStatus('4');
+        $result = $listing->getStatus();
+        $this->assertEquals($result, $expected);
     }
 }
