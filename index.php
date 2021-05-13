@@ -14,14 +14,14 @@ require_once 'vendor/autoload.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div class="header">
-    <div class="basicNavbar">
+<header>
+    <nav class="basicNavbar">
         <div class="basicNavbarButtons">
             <a href="index.php?type=all"><button class="allBtn navButtons" >All</button></a>
             <a href="index.php?type=sales"><button class="salesBtn navButtons">Sales</button></a>
             <a href="index.php?type=lettings"><button class="lettingsBtn navButtons">Lettings</button></a>
         </div>
-    </div>
+    </nav>
     <div class="jumbotron">
         <div class="overlay">
             <h1>SOLID</h1>
@@ -110,6 +110,7 @@ require_once 'vendor/autoload.php';
             </div>
         </div>
     </div>
+</header>
 <div class="pageContent">
 
 </div>
