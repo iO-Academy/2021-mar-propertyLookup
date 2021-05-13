@@ -121,7 +121,7 @@ class ListingTest extends TestCase
     }
 
     /**
-     * test success of status getter if status is 1
+      * test success of status getter
      */
     public function testGetStatus1_success()
     {

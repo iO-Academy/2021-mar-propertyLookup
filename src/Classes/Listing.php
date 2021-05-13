@@ -19,6 +19,7 @@ class Listing
     protected string $type;
     protected string $status;
 
+
     /**
      * Listing constructor. Auto-populated by Hydrator with default properties/constructor in place for unit testing.
      */
@@ -124,4 +125,5 @@ class Listing
     {
         return $this->status;
     }
+
 }

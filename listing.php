@@ -1,6 +1,10 @@
 <?php
+if (!isset($_GET['agentRef'])) {
+    header('Location: index.php');
+}
+
 require_once 'vendor/autoload.php';
-use ListingsApp\Classes\Listing;
+
 use ListingsApp\Classes\ListingHydrator;
 use ListingsApp\Classes\ListingWindow;
 
@@ -10,43 +14,40 @@ use ListingsApp\Classes\ListingWindow;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="normalize" href="app/css/normalize.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="app/css/style.css"/>
     <title>Solid Properties</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-<div class="header">
-    <div class="basicNavbar">
-        <div class="basicNavbarButtons">
-            <button id="allBtn">All</button>
-            <button id="salesBtn">Sales</button>
-            <button id="lettingsBtn">Lettings</button>
+    <body>
+        <div class="header">
+            <div class="basicNavbar">
+                <div class="basicNavbarButtons">
+                    <a href="index.php"><button class="allBtn navButtons" >All</button></a>
+                    <a href="index.php?type=1"><button class="salesBtn navButtons">Sales</button></a>
+                    <a href="index.php?type=2"><button class="lettingsBtn navButtons">Lettings</button></a>
+                </div>
+            </div>
+            <div class="jumbotron">
+                <div class="overlay">
+                    <h1>SOLID</h1>
+                    <h2>Properties</h2>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="jumbotron">
-        <div class="overlay">
-            <h1>SOLID</h1>
-            <h2>Properties</h2>
-        </div>
-    </div>
-</div>
+        <section id="listingDisplay">
+            <?php
+                $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
 
-<section id="listingDisplay">
-    <?php
-        $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
+                $agentRef = $_GET['agentRef'];
 
-        $agentRef = 'CSL123_100259';
+                $hydrator = new ListingHydrator($db);
 
-        $hydrator = new ListingHydrator();
+                $listing = $hydrator->getListing($agentRef);
 
-        $listing = $hydrator->getListing($db, $agentRef);
-
-        echo ListingWindow::displayListing($listing);
-    ?>
-
-</section>
-
-
-</body>
+                echo ListingWindow::displayListing($listing)
+            ?>
+        </section>
+    </body>
 </html>
