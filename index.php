@@ -1,9 +1,9 @@
 <?php
 
+use ListingsApp\Classes\ListingsWindow;
+use ListingsApp\Classes\ListingHydrator;
 
-namespace ListingsApp\Classes;
-
-use PDO;
+require_once 'vendor/autoload.php';
 
 /** connect to database
  * @return PDO
@@ -16,8 +16,8 @@ function connectDB():PDO
 ?>
 <html>
 <body>
-<a href="index.php?type=1"><button>Sales</button></a>
-<a href="index.php?type=2"><button>Lettings</button></a>
+<a href="index.php?type=1">Sales</a>
+<a href="index.php?type=2">Lettings</a>
 
 <?php
 if (isset($_GET['type'])){
