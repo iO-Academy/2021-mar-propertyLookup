@@ -106,3 +106,43 @@ body {
   margin: auto auto;
 }
 
+@media screen and (max-width:900px) {
+  .pageContent {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin:auto;
+  }
+  .listingCard {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .pageContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+  .listingCard {
+    width:350px;
+  }
+  .jumbotron {
+    display:none;
+  }
+  .smallTitle {
+
+    h1 {
+      display: contents;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 2rem;
+    }
+
+    h2 {
+      display: contents;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+  }
+}
