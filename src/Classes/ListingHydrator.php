@@ -9,7 +9,6 @@ use PDO;
 class ListingHydrator
 {
     protected PDO $dbConnection;
-
     /**
      * ListingHydrator constructor.
      * @param $db
