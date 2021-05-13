@@ -1,9 +1,9 @@
-@import 'imports/mixins';
 @import 'imports/variables';
 @import 'imports/listingPage';
 @import 'imports/salesNavbar';
 @import 'imports/jumbotron';
 @import 'imports/bootstrapfilters';
+@import 'imports/mediaqueries';
 
 @font-face {
   font-family:'Merriweather', serif;
@@ -64,11 +64,4 @@ button:focus {
   justify-content: space-around;
   height: 50px;
   color: $primary;
-}
-
-.pageContent {
-  padding-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: auto auto;
 }

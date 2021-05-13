@@ -1,3 +1,10 @@
+.pageContent {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto auto;
+}
+
 #listingDisplay {
   display: grid;
   grid-template-areas:
@@ -11,6 +18,10 @@
     max-width: 620px;
     margin-top: .8rem;
   }
+}
+
+.smallTitle {
+  display: none;
 }
 
 .infoDisplay {

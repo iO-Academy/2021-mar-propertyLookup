@@ -28,6 +28,7 @@ use ListingsApp\Classes\ListingWindow;
             <a class="navLinks" href="index.php?type=lettings">Lettings</a>
         </div>
     </nav>
+</header>
     <div class="jumbotron">
         <div class="overlay">
             <h1>SOLID</h1>
