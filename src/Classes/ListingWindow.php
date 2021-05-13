@@ -53,7 +53,7 @@ class ListingWindow
         $result = '';
         foreach($listings as $listing) {
             $agentRef = $listing->getAgentRef();
-            $result .= '<div class="listingCard card" style="width: 18rem;">';
+            $result .= '<div class="listingCard card">';
             $result .= '<img class="card-img-top" alt="Property for sale at ' . $listing->getAddress2() . '" src="https://dev.io-academy.uk/resources/property-feed/images/' . $listing->getImage() . '"/>';
             $result .= '<div class= "listingInfo">';
             $result .= '<h5 class="priceDisplay">' . number_format($listing->getPrice()) . '</h5>';

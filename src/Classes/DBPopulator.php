@@ -2,9 +2,9 @@
 namespace ListingsApp\Classes;
 use PDO;
 class DBPopulator {
-    private ListingAPI $listingAPI;
-    private PDO $dbConnection;
-    private array $listings;
+    protected ListingAPI $listingAPI;
+    protected PDO $dbConnection;
+    protected array $listings;
     /**
      * DBPopulator constructor.
      * @param $listingAPI
@@ -20,7 +20,7 @@ class DBPopulator {
      * fills listings table in listings-feed db
      * @return void
      */
-    private function populateDBListingsTable(): void {
+    protected function populateDBListingsTable(): void {
         $this->emptyDB('listings');
         $this->listings = $this->listingAPI->getListingsFromApi();
         foreach($this->listings as $listing) {
@@ -44,7 +44,7 @@ class DBPopulator {
      * fills types tables in listings-feed db
      * @return void
      */
-    private function populateDBTypesTable(): void {
+    protected function populateDBTypesTable(): void {
         $this->emptyDB('types');
         $this->listings = $this->listingAPI->getTypesFromApi();
         foreach ($this->listings as $listing) {
@@ -58,7 +58,7 @@ class DBPopulator {
      * fills statuses tables in listings-feed db
      * @return void
      */
-    private function populateDBStatusesTable(): void {
+    protected function populateDBStatusesTable(): void {
         $this->emptyDB('statuses');
         $this->listings = $this->listingAPI->getStatusesFromApi();
         foreach ($this->listings as $listing) {
