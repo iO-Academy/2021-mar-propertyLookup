@@ -123,7 +123,12 @@ use ListingsApp\Classes\ListingWindow;
         $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
         $listingHydrator = new listingHydrator($db);
         $listings = $listingHydrator->getAllListings();
-        echo ListingWindow::displayListings($listings);
+        if(count($listings) == 0) {
+            echo '</main>';
+            echo '<div class="errorMessage"><h2> 404 The server can not find the requested resource. </h2></div>';
+        } else {
+            echo ListingWindow::displayListings($listings);
+        }
         ?>
     </main>
 </body>
