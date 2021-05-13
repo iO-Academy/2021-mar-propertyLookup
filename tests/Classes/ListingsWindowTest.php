@@ -27,6 +27,12 @@ class ListingsWindowTest extends TestCase {
             ->method('getAddress2')
             ->willReturn('Plough Hill Road');
         $listingMock->expects($this->once())
+            ->method('getTown')
+            ->willReturn('Nuneaton');
+        $listingMock->expects($this->once())
+            ->method('getPostcode')
+            ->willReturn('CV11 6PE');
+        $listingMock->expects($this->once())
             ->method('getBedrooms')
             ->willReturn('6');
         $listingMock->expects($this->once())
@@ -41,7 +47,7 @@ class ListingsWindowTest extends TestCase {
 
 
         $result= ListingsWindow::displayListings([$listingMock]);
-        $expected = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/CSL123_100327_IMG_00.JPG"/><div class= "infoDisplay"><p>Plough Hill Road</p><p>6 Bedrooms</p><p>For Sale</p><p class="priceDisplay">355,000</p><p>CSL123_100259</p></div></div>';
+        $expected = '<div class="listingCard card" style="width: 18rem;"><img class="card-img-top" alt="Image of property" src="https://dev.io-academy.uk/resources/property-feed/images/CSL123_100327_IMG_00.JPG"/><div class= "listingInfo"><h5 class="priceDisplay">£355,000</h5><ul class="list-group list-group-flush"><li>Plough Hill Road, Nuneaton</li><li>CV11 6PE</li><li>For Sale</li><li>6 Bedrooms</ul><div class="viewPropertyButton"><a href="listing.php?agentRef=CSL123_100259 "><button type="button" class="btn btn-primary btn-sm"><span>View property</span></button></a></div></div></div>';
         $this->assertEquals($result, $expected);
     }
 
