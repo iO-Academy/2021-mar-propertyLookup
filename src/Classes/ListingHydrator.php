@@ -1,12 +1,10 @@
 <?php
 
+
 namespace ListingsApp\Classes;
+
 use PDO;
 
-/**
- * Class ListingHydrator
- * namespace - ListingsApp\Classes
- */
 class ListingHydrator
 {
     protected PDO $dbConnection;
@@ -15,6 +13,25 @@ class ListingHydrator
     public function __construct(PDO $db)
     {
         $this->dbConnection = $db;
+    }
+
+    /**
+     * get listings from database by type
+     * @param int $type
+     * @return array
+     */
+    public function getListingsByType(int $type): array
+    {
+        $query = $this->dbConnection->prepare("SELECT `agent_ref`, `address_1`,  `address_2`, `town`, `postcode`,  `description`, `bedrooms`, `price`, `image`, `status_name` 
+            AS `status`
+            FROM `listings`
+            INNER JOIN `statuses`
+            ON `listings`.`status` = `statuses`.`id`
+            WHERE `type` = :type;");
+        $query->bindParam('type', $type);
+        $query->execute();
+        $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Listing::class );
+        return $query->fetchAll();
     }
 
     /**

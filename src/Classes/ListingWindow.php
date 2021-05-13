@@ -1,8 +1,5 @@
 <?php
-
-
 namespace ListingsApp\Classes;
-
 /**
  * Class ListingWindow
  * namespace ListingsApp\Classes
@@ -28,9 +25,7 @@ class ListingWindow
         $result .= '<p>' . $listing->getDescription() . '</p>';
         $result .= '</div>';
         return  $result;
-
     }
-
     /**
      * displaying the listings in HTML on index.php
      * @param array $listings

@@ -1,7 +1,8 @@
 <?php
 
+
 require_once 'vendor/autoload.php';
-use ListingsApp\Classes\Listing;
+
 use ListingsApp\Classes\ListingHydrator;
 use ListingsApp\Classes\ListingWindow;
 ?>
@@ -23,9 +24,9 @@ use ListingsApp\Classes\ListingWindow;
 <header>
     <nav class="basicNavbar">
         <div class="basicNavbarLinks">
-            <a class="navLinks" href="index.php?type=all">All</a>
-            <a class="navLinks" href="index.php?type=sales">Sales</a>
-            <a class="navLinks" href="index.php?type=lettings">Lettings</a>
+            <a class="navLinks" href="index.php">All</a>
+            <a class="navLinks" href="index.php?type=1">Sales</a>
+            <a class="navLinks" href="index.php?type=2">Lettings</a>
         </div>
     </nav>
 </header>
@@ -122,16 +123,19 @@ use ListingsApp\Classes\ListingWindow;
         <?php
         $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
         $listingHydrator = new listingHydrator($db);
-        $listings = $listingHydrator->getAllListings();
-        if(count($listings) == 0) {
+        if (isset($_GET['type'])){
+            $data = $listingHydrator->getListingsByType($_GET['type']);
+        } else {
+            $data = $listingHydrator->getAllListings();
+        }
+
+        if(count($data) == 0) {
             echo '</main>';
             echo '<div class="errorMessage"><h2> 404 The server can not find the requested resource. </h2></div>';
         } else {
-            echo ListingWindow::displayListings($listings);
+            echo ListingWindow::displayListings($data);
         }
         ?>
     </main>
 </body>
 </html>
-
-

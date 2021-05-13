@@ -1,6 +1,5 @@
 <?php
 namespace ListingsApp\Classes;
-
 /**
  * Class Listing
  * namespace - ListingsApp\Classes
@@ -18,8 +17,6 @@ class Listing
     protected string $image;
     protected string $type;
     protected string $status;
-
-
     /**
      * Listing constructor. Auto-populated by Hydrator with default properties/constructor in place for unit testing.
      */
@@ -37,7 +34,6 @@ class Listing
         $this->type = $type;
         $this->status = $status;
     }
-
     /**
      * @return string
      */
@@ -45,7 +41,6 @@ class Listing
     {
         return $this->agent_ref;
     }
-
     /**
      * @return string
      */
@@ -53,7 +48,6 @@ class Listing
     {
         return $this->address_1;
     }
-
     /**
      * @return string
      */
@@ -61,7 +55,6 @@ class Listing
     {
         return $this->address_2;
     }
-
     /**
      * @return string
      */
@@ -69,7 +62,6 @@ class Listing
     {
         return $this->town;
     }
-
     /**
      * @return string
      */
@@ -77,7 +69,6 @@ class Listing
     {
         return $this->postcode;
     }
-
     /**
      * @return string
      */
@@ -85,7 +76,6 @@ class Listing
     {
         return $this->description;
     }
-
     /**
      * @return string
      */
@@ -93,7 +83,6 @@ class Listing
     {
         return $this->bedrooms;
     }
-
     /**
      * @return string
      */
@@ -101,7 +90,6 @@ class Listing
     {
         return $this->price;
     }
-
     /**
      * @return string
      */
@@ -109,7 +97,6 @@ class Listing
     {
         return $this->image;
     }
-
     /**
      * @return string
      */
@@ -117,7 +104,6 @@ class Listing
     {
         return $this->type;
     }
-
     /**
      * @return string
      */
@@ -125,5 +111,4 @@ class Listing
     {
         return $this->status;
     }
-
 }
