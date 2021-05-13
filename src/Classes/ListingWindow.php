@@ -63,8 +63,8 @@ class ListingWindow
             $result .= '<li>' . $listing->getStatus() . '</li>';
             $result .= '<li>' . $listing->getBedrooms() . ' Bedrooms';
             $result .= '</ul>';
-            $result .= '<div class="viewPropertyButton">';
-            $result .= '<a href="listing.php?agentRef=' . $agentRef .' "><button type="button" class="btn btn-primary btn-sm"><span>View property</span></button></a>';
+            $result .= '<div class="viewPropertyLink">';
+            $result .= '<a href="listing.php?agentRef=' . $agentRef .' ">View property</a>';
             $result .= '</div>';
             $result .= '</div>';
             $result .= '</div>';
