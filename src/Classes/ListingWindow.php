@@ -38,9 +38,7 @@ class ListingWindow
         $result .= $listing->getDescription();
         $result .= '</p>';
         $result .= '</div>';
-
-
-        return  $result;
+        return $result;
     }
 
     /**
@@ -51,7 +49,7 @@ class ListingWindow
     static function displayListings(array $listings): string
     {
         $result = '';
-        foreach($listings as $listing) {
+        foreach ($listings as $listing) {
             $agentRef = $listing->getAgentRef();
             $result .= '<div class="listingCard card">';
             $result .= '<img class="card-img-top" alt="Property for sale at ' . $listing->getAddress2() . '" src="https://dev.io-academy.uk/resources/property-feed/images/' . $listing->getImage() . '"/>';
@@ -64,7 +62,7 @@ class ListingWindow
             $result .= '<li>' . $listing->getBedrooms() . ' Bedrooms</li>';
             $result .= '</ul>';
             $result .= '<div class="viewPropertyLink">';
-            $result .= '<a href="listing.php?agentRef=' . $agentRef .'">View property</a>';
+            $result .= '<a href="listing.php?agentRef=' . $agentRef . '">View property</a>';
             $result .= '</div>';
             $result .= '</div>';
             $result .= '</div>';

@@ -15,7 +15,6 @@ class ListingHydrator
     /**
      * FETCH_PROPS_LATE - hydrates Listing class AFTER constructor has run
      *
-     * @param PDO $db
      * @param string $agentRef - string delivered to listing.php via GET request
      * @return Listing - a fully hydrated Listing object
      */
@@ -30,7 +29,6 @@ class ListingHydrator
 
     /**
      * gets all listings from db table listings
-     * @param PDO $db
      * @return array
      */
     public function getAllListings(): array

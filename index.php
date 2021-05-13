@@ -122,7 +122,7 @@ use ListingsApp\Classes\ListingWindow;
         <?php
         $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
         $listingHydrator = new listingHydrator($db);
-        $listings = $listingHydrator->getAllListings($db);
+        $listings = $listingHydrator->getAllListings();
         echo ListingWindow::displayListings($listings);
         ?>
     </main>
