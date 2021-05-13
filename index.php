@@ -117,6 +117,7 @@ require_once 'vendor/autoload.php';
             </div>
         </div>
     </div>
+
     <div class="pageContent">
         <?php
         $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
@@ -124,6 +125,7 @@ require_once 'vendor/autoload.php';
         echo ListingWindow::displayListings($listings);
         ?>
     </div>
+
 <div class="pageContent">
 
 </div>
