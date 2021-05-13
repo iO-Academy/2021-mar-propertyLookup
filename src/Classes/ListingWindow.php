@@ -10,10 +10,10 @@ namespace ListingsApp\Classes;
 class ListingWindow
 {
     /**
-     * @param $listing - a hydrated Listing object
+     * @param Listing $listing - a hydrated Listing object
      * @return string - HTML content to display on listing.php
      */
-    static function displayListing($listing): string
+    static function displayListing(Listing $listing): string
     {
         $result = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/' . $listing->getImage() . '" alt="Image of the selected Listing"/>';
         $result .= '<div class= "infoDisplay">';

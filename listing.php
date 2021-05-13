@@ -1,4 +1,8 @@
 <?php
+if (!isset($_GET['agentRef'])) {
+    header('Location: index.php');
+}
+
 require_once 'vendor/autoload.php';
 
 use ListingsApp\Classes\ListingHydrator;
@@ -36,7 +40,7 @@ use ListingsApp\Classes\ListingWindow;
     <?php
         $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
 
-        $agentRef= $_GET['agentRef'];
+        $agentRef = $_GET['agentRef'];
 
         $hydrator = new ListingHydrator();
 
