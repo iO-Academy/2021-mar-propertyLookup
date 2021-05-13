@@ -67,7 +67,6 @@ class ListingWindowTest extends TestCase {
 
     public function testDisplayListings_success()
     {
-        //$listingsMock = [];
         $listingsMock = $this->createMock(Listing::class);
         $listingsMock->expects($this->once())
             ->method('getImage')
@@ -95,38 +94,20 @@ class ListingWindowTest extends TestCase {
         $listingsMockArray[] = $listingsMock;
 
 
-        $result= ListingWindow::displayListings($listingsMockArray);
+        $result = ListingWindow::displayListings($listingsMockArray);
         $expected = '<div class="listingCard card" style="width: 18rem;"><img class="card-img-top" alt="Property for sale at Plough Hill Road" src="https://dev.io-academy.uk/resources/property-feed/images/CSL123_100327_IMG_00.JPG"/><div class= "listingInfo"><h5 class="priceDisplay">355,000</h5><ul class="list-group list-group-flush"><li>Plough Hill Road, </li><li>CV11 6PE</li><li>For Sale</li><li>6 Bedrooms</li></ul><div class="viewPropertyLink"><a href="listing.php?agentRef=CSL123_100259">View property</a></div></div></div>';
         $this->assertEquals($result, $expected);
-//        $practice_array = [[
-//           'getImage' => 'CSL123_100327_IMG_00.JPG',
-//            'getAddress2' => 'Plough Hill Road',
-//            'getPostcode' => 'CV11 6PE',
-//            'getBedrooms' => '6',
-//            'getStatus' => 'For Sale',
-//            'getPrice' => '355000',
-//            'getAgentRef' => 'CSL123_100259',
-//            'getDescription' => 'This is a rare opportunity...'
-//        ]];
-//        $result = ListingWindow::displayListings($practice_array);
-//        $expected = '';
-//        $expected .= "<div class='listingCard card' style='width: 18rem;'>";
-//        $expected .= "<img class='card-img-top'  src="https://dev.io-academy.uk/resources/property-feed/images/' . $listing->getImage() . '"/>';
-//        $expected .= '<div class= "listingInfo">';
-//        $expected .= '<h5 class="priceDisplay">' . '355000' . '</h5>';
-//        $expected .= '<ul class="list-group list-group-flush">';
-//        $expected .= '<li>' . 'Plough Hill Road' . ', ' . $listing->getTown() . '</li>';
-//        $expected .= '<li>' . 'CV11 6PE' . '</li>';
-//        $expected .= '<li>' . 'For Sale' . '</li>';
-//        $expected .= '<li>' . '6' . ' Bedrooms';
-//        $expected .= '</ul>';
-//        $expected .= '<div class="viewPropertyButton">';
-//        $expected .= '<a href="listing.php?agentRef=' . 'CSL123_100259' .' "><button type="button" class="btn btn-primary btn-sm"><span>View property</span></button></a>';
-//        $expected .= '</div>';
-//        $expected .= '</div>';
-//        $expected .= '</div>';
-//
-//        $this->assertEquals($result, $expected);
+    }
+    public function testDisplayListings_failure1()
+    {
+        $this->expectException(Error::class);
+        ListingWindow::displayListings('$listingsMockArray');
+    }
+
+    public function testDisplayListings_failure2()
+    {
+        $this->expectException(Error::class);
+        ListingWindow::displayListing(['$listingsMockArray']);
     }
 
 }
