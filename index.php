@@ -118,13 +118,13 @@ require_once 'vendor/autoload.php';
         </div>
     </div>
 
-    <div class="pageContent">
+    <main class="pageContent">
         <?php
         $db = new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
         $listings = ListingHydrator::getAllListings($db);
         echo ListingWindow::displayListings($listings);
         ?>
-    </div>
+    </main>
 
 <div class="pageContent">
 
