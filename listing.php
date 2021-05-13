@@ -20,34 +20,34 @@ use ListingsApp\Classes\ListingWindow;
     <title>Solid Properties</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-<div class="header">
-    <div class="basicNavbar">
-        <div class="basicNavbarButtons">
-            <a href="index.php"><button class="allBtn navButtons" >All</button></a>
-            <a href="index.php?type=1"><button class="salesBtn navButtons">Sales</button></a>
-            <a href="index.php?type=2"><button class="lettingsBtn navButtons">Lettings</button></a>
+    <body>
+        <div class="header">
+            <div class="basicNavbar">
+                <div class="basicNavbarButtons">
+                    <a href="index.php"><button class="allBtn navButtons" >All</button></a>
+                    <a href="index.php?type=1"><button class="salesBtn navButtons">Sales</button></a>
+                    <a href="index.php?type=2"><button class="lettingsBtn navButtons">Lettings</button></a>
+                </div>
+            </div>
+            <div class="jumbotron">
+                <div class="overlay">
+                    <h1>SOLID</h1>
+                    <h2>Properties</h2>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="jumbotron">
-        <div class="overlay">
-            <h1>SOLID</h1>
-            <h2>Properties</h2>
-        </div>
-    </div>
-</div>
-<section id="listingDisplay">
-    <?php
-        $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
+        <section id="listingDisplay">
+            <?php
+                $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
 
-        $agentRef = $_GET['agentRef'];
+                $agentRef = $_GET['agentRef'];
 
-        $hydrator = new ListingHydrator();
+                $hydrator = new ListingHydrator($db);
 
-        $listing = $hydrator->getListing($db, $agentRef);
+                $listing = $hydrator->getListing($agentRef);
 
-        echo ListingWindow::displayListing($listing)
-    ?>
-</section>
-</body>
+                echo ListingWindow::displayListing($listing)
+            ?>
+        </section>
+    </body>
 </html>

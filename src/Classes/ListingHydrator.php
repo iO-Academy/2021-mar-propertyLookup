@@ -1,8 +1,6 @@
 <?php
 
-
 namespace ListingsApp\Classes;
-
 
 use PDO;
 
@@ -12,16 +10,22 @@ use PDO;
  */
 class ListingHydrator
 {
+    protected PDO $dbConnection;
+
+    public function __construct(PDO $db)
+    {
+        $this->dbConnection = $db;
+    }
+
     /**
      * FETCH_PROPS_LATE - hydrates Listing class AFTER constructor has run
      *
-     * @param PDO $db
      * @param string $agentRef - string delivered to listing.php via GET request
      * @return Listing - a fully hydrated Listing object
      */
-    public function getListing(PDO $db, string $agentRef): Listing
+    public function getListing(string $agentRef): Listing
     {
-        $query= $db->prepare('SELECT `agent_ref`, `address_1`,  `address_2`, `town`, `postcode`,  `description`, `bedrooms`, `price`, `image`, `type`, `status_name` AS `status` FROM `listings` INNER JOIN `statuses` ON `listings`.`status` = `statuses`.`id` WHERE `agent_ref` = :agentRef;');
+        $query = $this->dbConnection->prepare('SELECT `agent_ref`, `address_1`,  `address_2`, `town`, `postcode`,  `description`, `bedrooms`, `price`, `image`, `type`, `status_name` AS `status` FROM `listings` INNER JOIN `statuses` ON `listings`.`status` = `statuses`.`id` WHERE `agent_ref` = :agentRef;');
         $query->bindParam('agentRef', $agentRef);
         $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Listing::class);
         $query->execute();
@@ -29,14 +33,14 @@ class ListingHydrator
     }
 
     /**
-     * @param PDO $db
+     * gets all listings from db
      * @return array of Listing objects
      */
-    public static function getAllListings(PDO $db)
+    public function getAllListings(): array
     {
-        $query = $db->prepare("SELECT `agent_ref`, `address_1`, `address_2`, `town`, `postcode`, `description`, `bedrooms`, `price`, `image`, `type`, `status` FROM `listings`;");
-        $query->execute();
+        $query = $this->dbConnection->prepare("SELECT `agent_ref`, `address_1`, `address_2`, `town`, `postcode`, `description`, `bedrooms`, `price`, `image`, `type`, `status` FROM `listings`;");
         $query->setFetchMode(PDO::FETCH_CLASS, Listing::class);
+        $query->execute();
         return $query->fetchAll();
     }
 }

@@ -121,7 +121,7 @@ class ListingTest extends TestCase
     }
 
     /**
-     * test success of status getter if status is 1
+     * test success of status getter
      */
     public function testGetStatus1_success()
     {
@@ -130,9 +130,4 @@ class ListingTest extends TestCase
         $expected= 'For Sale';
         $this->assertEquals($expected, $result);
     }
-
-    /**
-     * test success of status getter if status is 2
-     */
-
 }
