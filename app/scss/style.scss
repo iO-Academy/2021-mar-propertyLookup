@@ -14,6 +14,7 @@
   box-sizing: border-box
 }
 
+
 body {
   background: $tertiary;
   font-size: 10px;
@@ -21,12 +22,16 @@ body {
   color: #E7ECF8;
 }
 
+button:focus {
+  tab-index: -1;
+}
+
 .basicNavbar {
   background: #161B31;
   height: 50px;
 }
 
-.basicNavbarButtons {
+.basicNavbarLinks {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -37,9 +42,14 @@ body {
   width: 100%;
   height: 40px;
   background-color: #21264D;
+
+  a:hover, a:active, a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
-.navButtons {
+.navLinks {
   font-size: 1.5rem;
   margin: 0;
   font-family: Verdana, sans-serif;

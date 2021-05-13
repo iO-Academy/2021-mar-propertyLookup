@@ -93,8 +93,35 @@
   }
 }
 
-.viewPropertyButton {
-  display:flex;
+.viewPropertyLink {
+  display: flex;
+  margin: 10px auto;
+  width: 38%;
+  background:#E7ECF8;
+  border-radius: 5px;
+  height: 1.6rem;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background: transparent;
+    color: #E7ECF8;
+  }
+
+  a {
+    padding: 5px 10px;
+    color: #21264D;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  a:visited, a:active {
+    color: #21264D;
+  }
+
+  a:hover {
+    color: #E7ECF8;
+  }
 }
 
 //media queries

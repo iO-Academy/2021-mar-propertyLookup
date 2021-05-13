@@ -22,10 +22,10 @@ use ListingsApp\Classes\ListingWindow;
 <body>
 <header>
     <nav class="basicNavbar">
-        <div class="basicNavbarButtons">
-            <a href="index.php?type=all"><button class="allBtn navButtons" >All</button></a>
-            <a href="index.php?type=sales"><button class="salesBtn navButtons">Sales</button></a>
-            <a href="index.php?type=lettings"><button class="lettingsBtn navButtons">Lettings</button></a>
+        <div class="basicNavbarLinks">
+            <a class="navLinks" href="index.php?type=all">All</a>
+            <a class="navLinks" href="index.php?type=sales">Sales</a>
+            <a class="navLinks" href="index.php?type=lettings">Lettings</a>
         </div>
     </nav>
     <div class="jumbotron">
