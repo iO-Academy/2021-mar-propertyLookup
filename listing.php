@@ -20,9 +20,9 @@ use ListingsApp\Classes\ListingWindow;
 <div class="header">
     <div class="basicNavbar">
         <div class="basicNavbarButtons">
-            <a href="index.php?type=all"><button class="allBtn navButtons" >All</button></a>
-            <a href="index.php?type=sales"><button class="salesBtn navButtons">Sales</button></a>
-            <a href="index.php?type=lettings"><button class="lettingsBtn navButtons">Lettings</button></a>
+            <a href="index.php"><button class="allBtn navButtons" >All</button></a>
+            <a href="index.php?type=1"><button class="salesBtn navButtons">Sales</button></a>
+            <a href="index.php?type=2"><button class="lettingsBtn navButtons">Lettings</button></a>
         </div>
     </div>
     <div class="jumbotron">
@@ -37,7 +37,7 @@ use ListingsApp\Classes\ListingWindow;
     <?php
         $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
 
-       $agentRef= $_GET['agentRef'];
+        $agentRef= $_GET['agentRef'];
 
         $hydrator = new ListingHydrator();
 
