@@ -80,7 +80,7 @@ class ListingTest extends TestCase{
     {
         $listing= new Listing();
         $result= $listing->getStatus();
-        $expected= 'For Sale';
+        $expected= 1;
         $this->assertEquals($expected, $result);
     }
 }
