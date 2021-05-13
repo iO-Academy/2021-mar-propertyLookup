@@ -1,5 +1,6 @@
 <?php
 
+use ListingsApp\Classes\Listing;
 use ListingsApp\Classes\ListingsWindow;
 
 use PHPUnit\Framework\TestCase;
@@ -39,26 +40,26 @@ class ListingsWindowTest extends TestCase {
             ->willReturn('CSL123_100259');
 
 
-        $result= ListingsWindow::displayListings($listingMock);
-        $expected = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/CSL123_100327_IMG_00.JPG"/><div class= "infoDisplay"><p>Plough Hill Road</p><p>6 Bedrooms </p><p>For Sale</p><p class="priceDisplay">355,000</p><p>CSL123_100259</p></div><div class="descriptionDisplay"><h3>Description</h3><p>This is a rare opportunity...</p></div>';
+        $result= ListingsWindow::displayListings([$listingMock]);
+        $expected = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/CSL123_100327_IMG_00.JPG"/><div class= "infoDisplay"><p>Plough Hill Road</p><p>6 Bedrooms</p><p>For Sale</p><p class="priceDisplay">355,000</p><p>CSL123_100259</p></div></div>';
         $this->assertEquals($result, $expected);
     }
 
     /**
      * test the result of passing a string to ListingWindow::displayListing()
      */
-    public function testDisplayListing_failure1()
+    public function testDisplayListings_failure1()
     {
         $this->expectException(Error::class);
-        ListingWindow::displayListing('$listingMock');
+        ListingsWindow::displayListings('$listingMock');
     }
 
     /**
      * test the result of passing an array of string/s to ListingWindow::displayListing()
      */
-    public function testDisplayListing_failure2()
+    public function testDisplayListings_failure2()
     {
         $this->expectException(Error::class);
-        ListingWindow::displayListing(['$listingMock']);
+        ListingsWindows::displayListings(['$listingMock']);
     }
 }

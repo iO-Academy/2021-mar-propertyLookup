@@ -1,7 +1,10 @@
 <?php
 
-
 namespace ListingsApp\Classes;
+function getDB(): PDO
+{
+    return new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
+}
 
 ?>
 <html>
