@@ -34,6 +34,9 @@ use ListingsApp\Classes\ListingWindow;
             <h2>Properties</h2>
         </div>
     </div>
+    <div class="smallTitle">
+        <h3>SOLID Properties</h3>
+    </div>
     <div class="bootstrapTable salesDropdowns">
         <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
