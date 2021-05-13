@@ -1,0 +1,28 @@
+
+.basicNavbar {
+  background: $tertiary;
+  height: 50px;
+}
+
+.basicNavbarButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 5px 0;
+  margin: 5px;
+  width: 100%;
+  height: 40px;
+  background-color: $secondary;
+}
+
+.navButtons {
+  font-size: 1.5rem;
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  color: $primary;
+  background-color: transparent;
+  border: 0;
+  justify-content: space-around;
+}
