@@ -70,11 +70,11 @@ class DBPopulator {
 
     /**
      * empties each table (called before it repopulates them)
-     * @param $tableName
+     * @param string $tableName
      * @return void
      *
      */
-    private function emptyDB($tableName): void {
+    private function emptyDB(string $tableName): void {
       $emptyTableQuery = "TRUNCATE TABLE `$tableName`";
       $statement = $this->dbConnection->prepare($emptyTableQuery);
       $statement->execute();
@@ -85,8 +85,8 @@ class DBPopulator {
      * @return void
      */
     public function populateDBAllTables(): void {
-    $this->populateDBListingsTable();
-    $this->populateDBStatusesTable();
-    $this->populateDBTypesTable();
+        $this->populateDBListingsTable();
+        $this->populateDBStatusesTable();
+        $this->populateDBTypesTable();
     }
 }
