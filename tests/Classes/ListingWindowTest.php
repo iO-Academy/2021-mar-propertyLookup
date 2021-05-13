@@ -43,7 +43,7 @@ class ListingWindowTest extends TestCase {
             ->willReturn('This is a rare opportunity...');
 
         $result= ListingWindow::displayListing($listingMock);
-        $expected = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/CSL123_100327_IMG_00.JPG"/><div class= "infoDisplay"><p>Plough Hill Road</p><p>6 Bedrooms </p><p>For Sale</p><p class="priceDisplay">355,000</p><p>CSL123_100259</p></div><div class="descriptionDisplay"><h3>Description</h3><p>This is a rare opportunity...</p></div>';
+        $expected = '<img src ="https://dev.io-academy.uk/resources/property-feed/images/CSL123_100327_IMG_00.JPG" alt="Image of the selected Listing"/><div class= "infoDisplay"><p>Plough Hill Road</p><p>6 Bedrooms</p><p>For Sale</p><p class="priceDisplay">355,000</p><p>CSL123_100259</p></div><div class="descriptionDisplay"><h3>Description</h3><p>This is a rare opportunity...</p></div>';
         $this->assertEquals($result, $expected);
     }
 

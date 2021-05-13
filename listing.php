@@ -1,6 +1,6 @@
 <?php
 require_once 'vendor/autoload.php';
-use ListingsApp\Classes\Listing;
+
 use ListingsApp\Classes\ListingHydrator;
 use ListingsApp\Classes\ListingWindow;
 
@@ -32,7 +32,6 @@ use ListingsApp\Classes\ListingWindow;
         </div>
     </div>
 </div>
-
 <section id="listingDisplay">
     <?php
         $db = new PDO("mysql:host=db; dbname=listings-feed", "root", "password");
@@ -45,9 +44,6 @@ use ListingsApp\Classes\ListingWindow;
 
         echo ListingWindow::displayListing($listing)
     ?>
-
 </section>
-
-
 </body>
 </html>
