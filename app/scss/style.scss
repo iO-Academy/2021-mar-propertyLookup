@@ -1,6 +1,9 @@
 @import 'imports/mixins';
 @import 'imports/variables';
 @import 'imports/listingPage';
+@import 'imports/salesNavbar';
+@import 'imports/jumbotron';
+@import 'imports/bootstrapfilters';
 
 @font-face {
   font-family:'Merriweather', serif;
@@ -11,11 +14,16 @@
   box-sizing: border-box
 }
 
+
 body {
-  background: #161B31;
+  background: $tertiary;
   font-size: 10px;
   margin: 0;
   color: #E7ECF8;
+}
+
+button:focus {
+  tab-index: -1;
 }
 
 .basicNavbar {
@@ -23,7 +31,7 @@ body {
   height: 50px;
 }
 
-.basicNavbarButtons {
+.basicNavbarLinks {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -34,9 +42,14 @@ body {
   width: 100%;
   height: 40px;
   background-color: #21264D;
+
+  a:hover, a:active, a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
-.navButtons {
+.navLinks {
   font-size: 1.5rem;
   margin: 0;
   font-family: Verdana, sans-serif;
@@ -68,6 +81,10 @@ body {
 
 }
 
+.smallTitle {
+  display: none;
+}
+
 .overlay {
   font-family: 'Merriweather', serif;
   color: #E7ECF8;
@@ -93,9 +110,44 @@ body {
   display: flex;
   justify-content: space-around;
   height: 50px;
+  color: $primary;
 }
 
 .pageContent {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto auto;
+}
 
+@media screen and (max-width:900px) {
+  .pageContent {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin:auto;
+  }
+  .listingCard {
+    justify-content: space-around;
+  }
+}
 
+@media screen and (max-width:450px) {
+  .pageContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+  .listingCard {
+    width:350px;
+  }
+  .jumbotron {
+    display:none;
+  }
+  .smallTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  #E7ECF8;
+    position: relative;
+  }
 }

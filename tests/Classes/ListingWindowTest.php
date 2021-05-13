@@ -11,7 +11,7 @@ class ListingWindowTest extends TestCase {
             ->method('getImage')
             ->willReturn('CSL123_100327_IMG_00.JPG');
         $listingMock->
-        $result= ListingWindow::displayListing()
+        $result= ListingWindow::displayListing();
     }
 }
 
