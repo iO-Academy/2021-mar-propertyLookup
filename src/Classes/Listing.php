@@ -1,22 +1,41 @@
 <?php
-
-
 namespace ListingsApp\Classes;
 
-
+/**
+ * Class Listing
+ * namespace - ListingsApp\Classes
+ */
 class Listing
 {
- protected string $agent_ref;
- protected string $address_1;
- protected string $address_2;
- protected string $town;
- protected string $postcode;
- protected string $description;
- protected string $bedrooms;
- protected string $price;
- protected string $image;
- protected string $type;
- protected string $status;
+    protected string $agent_ref;
+    protected string $address_1;
+    protected string $address_2;
+    protected string $town;
+    protected string $postcode;
+    protected string $description;
+    protected string $bedrooms;
+    protected string $price;
+    protected string $image;
+    protected string $type;
+    protected string $status;
+
+    /**
+     * Listing constructor. Auto-populated by Hydrator with default properties/constructor in place for unit testing.
+     */
+    public function __construct(string $agent_ref = '', string $address_1 = '', string $address_2 = '', string $town = '', string $postcode = '', string $description = '', string $bedrooms = '6', string $price = '', string $image = '', string $type = '', string $status = '')
+    {
+        $this->agent_ref = $agent_ref;
+        $this->address_1 = $address_1;
+        $this->address_2 = $address_2;
+        $this->town = $town;
+        $this->postcode = $postcode;
+        $this->description = $description;
+        $this->bedrooms = $bedrooms;
+        $this->price = $price;
+        $this->image = $image;
+        $this->type = $type;
+        $this->status = $status;
+    }
 
     /**
      * @return string
@@ -67,7 +86,7 @@ class Listing
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getBedrooms(): string
     {
@@ -75,7 +94,7 @@ class Listing
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getPrice(): string
     {
@@ -91,7 +110,7 @@ class Listing
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getType(): string
     {
@@ -99,7 +118,7 @@ class Listing
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getStatus(): string
     {
