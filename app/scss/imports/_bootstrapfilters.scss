@@ -1,4 +1,3 @@
-
 .bootstrapTable {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -13,9 +12,11 @@
 .lettingDropdowns {
   visibility: collapse;
 }
+
 .salesDropdowns {
   visibility: collapse;
 }
+
 #dropdownMenuLink {
   background-color: transparent;
   border: 0;
