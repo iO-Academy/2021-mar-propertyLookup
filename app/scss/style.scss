@@ -1,6 +1,12 @@
 @import 'imports/mixins';
 @import 'imports/variables';
+<<<<<<< HEAD
 @import 'imports/listingPage';
+=======
+@import 'imports/salesNavbar';
+@import 'imports/jumbotron';
+@import 'imports/bootstrapfilters';
+>>>>>>> 367587bb2f6927bfb7da07ccd390787311883386
 
 @font-face {
   font-family:'Merriweather', serif;
@@ -12,9 +18,10 @@
 }
 
 body {
-  background: #161B31;
+  background: $tertiary;
   font-size: 10px;
   margin: 0;
+<<<<<<< HEAD
   color: #E7ECF8;
 }
 
@@ -97,6 +104,7 @@ body {
   display: flex;
   justify-content: space-around;
   height: 50px;
+  color: $primary;
 }
 
 .pageContent {
@@ -130,19 +138,10 @@ body {
     display:none;
   }
   .smallTitle {
-
-    h1 {
-      display: contents;
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 2rem;
-    }
-
-    h2 {
-      display: contents;
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 1rem;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  #E7ECF8;
+    position: relative;
   }
 }
