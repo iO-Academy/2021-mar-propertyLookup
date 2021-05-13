@@ -21,10 +21,10 @@ class ListingHydrator
      */
     public function getListing(PDO $db, string $agentRef): Listing
     {
-        $query= $db->prepare('SELECT `agent_ref`, `address_1`, `address_2`, `town`, `postcode`, `description`, `bedrooms`, `price`, `image`, `type`, `status` FROM `listings` WHERE `agent_ref` = :agentRef;');
+        $query= $db->prepare('SELECT `agent_ref`, `address_1`,  `address_2`, `town`, `postcode`,  `description`, `bedrooms`, `price`, `image`, `type`, `status_name` AS `status` FROM `listings` INNER JOIN `statuses` ON `listings`.`status` = `statuses`.`id` WHERE `agent_ref` = :agentRef;');
         $query->bindParam('agentRef', $agentRef);
         $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Listing::class);
         $query->execute();
         return $query->fetch();
     }
-}
+};
