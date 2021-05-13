@@ -1,0 +1,46 @@
+@media screen and (max-width:900px) {
+  .pageContent {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin:auto;
+  }
+  .listingCard {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width:710px){
+  .jumbotron {
+    height: 330px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width:450px) {
+  header {
+    width: 100%;
+  }
+  .smallTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  #E7ECF8;
+    position: relative;
+  }
+  .pageContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+  .listingCard {
+    width:350px;
+  }
+  .jumbotron {
+    display:none;
+  }
+  .bootstrapTable {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 150px;
+  }
+}

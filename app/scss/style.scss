@@ -1,6 +1,58 @@
-@import 'imports/mixins';
 @import 'imports/variables';
+@import 'imports/listingPage';
+@import 'imports/salesNavbar';
+@import 'imports/jumbotron';
+@import 'imports/bootstrapfilters';
+@import 'imports/mediaqueries';
+@font-face {
+  font-family:'Merriweather', serif;
+  src: url("../../resources/Merriweather-Regular.ttf");
+}
+* {
+  box-sizing: border-box;
+}
 body {
-  background: red;
+  background: $tertiary;
   font-size: 10px;
+  margin: 0;
+  color: #E7ECF8;
+}
+button:focus {
+  tab-index: -1;
+}
+.basicNavbar {
+  background: #161B31;
+  height: 50px;
+}
+.basicNavbarLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 5px 0;
+  margin: 5px;
+  width: 100%;
+  height: 40px;
+  background-color: #21264D;
+  a:hover, a:active, a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+.navLinks {
+  font-size: 1.5rem;
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  color: #E7ECF8;
+  border: 0;
+  background-color: #21264D;
+  justify-content: space-around;
+}
+.boostrapNavbar {
+  background: #21264D;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  color: $primary;
 }
