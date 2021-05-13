@@ -3,15 +3,6 @@
 
 namespace ListingsApp\Classes;
 
-require_once 'vendor/autoload.php';
-
-use PDO;
-
-function connectDB():PDO
-{
-    return new PDO('mysql:host=db;dbname=listings-feed', 'root', 'password');
-}
-
 ?>
 <html>
 <body>
