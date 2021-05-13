@@ -130,19 +130,11 @@ body {
     display:none;
   }
   .smallTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E7ECF8;
+    position: relative;
 
-    h1 {
-      display: contents;
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 2rem;
-    }
-
-    h2 {
-      display: contents;
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 1rem;
-    }
   }
 }

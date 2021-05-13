@@ -29,10 +29,9 @@ use ListingsApp\Classes\ListingWindow;
                 <h1>SOLID</h1>
                 <h2>Properties</h2>
             </div>
-            <div class="smallTitle">
-                <h1>SOLID</h1>
-                <h2>Properties</h2>
             </div>
+        <div class="smallTitle">
+            <h3>SOLID Properties</h3>
         </div>
         <div class="boostrapNavbar">
 
