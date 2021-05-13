@@ -7,6 +7,7 @@
   grid-column-gap: 1rem;
   width: 80%;
   margin: 0 auto;
+  padding-top: 1rem;
   & img {
     grid-area: img;
     height: auto;
@@ -17,6 +18,7 @@
 
 .infoDisplay {
   grid-area: info;
+  padding-top: 0.5rem;
   & p {
     padding-bottom: 5px;
     border-bottom: 1px solid #E7ECF8;
@@ -27,6 +29,7 @@
 
 .descriptionDisplay {
   grid-area: desc;
+  padding-top: 0.5rem;
   & h3 {
     font-size: 1.5rem;
     letter-spacing: .2rem;
